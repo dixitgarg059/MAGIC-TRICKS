@@ -1,4 +1,4 @@
-# Web application based on MERN stack - MongoDB, Express.js, React.js, and Node.js
+# Demonstration of card tricks using - MongoDB, Express.js, React.js, and Node.js
 
 ## Setup
 
