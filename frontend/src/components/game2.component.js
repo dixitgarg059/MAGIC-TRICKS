@@ -13,7 +13,7 @@ export default class GAME2 extends Component {
         return (
             <div>
             <h1>
-                Welcome to game1  !!
+                Welcome to game2  !!
             </h1>
             <button type="button" onClick={this.Show_logic} style={{float: 'right'}} > Show Logic </button>
             </div>

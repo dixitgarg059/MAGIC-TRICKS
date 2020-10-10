@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+// import * as contentful from 'contentful'
+
 
 export default class PLAY extends Component {
     
@@ -25,12 +27,7 @@ export default class PLAY extends Component {
       });
     }
     render() {
-        return (
-
-
-
-            
-            
+        return (  
             <div>
 
                 <h2> Here are the list of some awesome card games you'd enjoy !! </h2>
