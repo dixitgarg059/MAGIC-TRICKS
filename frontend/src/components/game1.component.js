@@ -5,9 +5,7 @@ export default class Products extends Component {
     
     constructor(props) {
         super(props);
-        // this.state
         this.state={
-            // username :this.props.location.user,
             cards1:[1,2,3,4],
             cards2:[4,3,2,1],
             total_count:0,

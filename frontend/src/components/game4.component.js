@@ -17,7 +17,7 @@ export default class GAME4 extends Component {
 
 
             <h1>
-                Welcome to game1  !!
+                Welcome to game4  !!
                 
             </h1>
             <button type="button" onClick={this.Show_logic} style={{float: 'right'}} > Show Logic </button>
