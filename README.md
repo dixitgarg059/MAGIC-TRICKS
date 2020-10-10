@@ -4,6 +4,12 @@
 
 #### Node
 
+Create a Virtual Env: 
+```
+python3 -m venv <path> # to create a new environment
+source <path>/bin/activate
+```
+
 For Linux:
 ```
 curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
