@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 
-export default class Products extends Component {
+export default class GAME5 extends Component {
     
     constructor(props) {
         super(props);
@@ -89,7 +89,7 @@ export default class Products extends Component {
     render() {
         return (
             <div>
-      
+            game5
             <button type="button" onClick={this.Show_logic} style={{float: 'right'}} > Show Logic </button>
           <div>
 

@@ -26,6 +26,11 @@ export default class PLAY extends Component {
         pathname:'/Play/Game4/'
       });
     }
+    Game5=() => {
+      this.props.history.push({
+      pathname:'/Play/Game5/'
+    });
+  }
     render() {
         return (  
             <div>
@@ -34,9 +39,10 @@ export default class PLAY extends Component {
                 <div>
                 <ol className="navbar-nav mr-auto">
               <li>Game1<button type="button" style={{float: 'right'}} onClick={this.Game1}>Play</button></li>
-              <li >Game2<button type="button" style={{float: 'right'}} onClick={this.Game2}>Play</button></li>
+              <li >0-1 Game<button type="button" style={{float: 'right'}} onClick={this.Game2}>Play</button></li>
               <li >Game3<button type="button" style={{float: 'right'}} onClick={this.Game3}>Play</button></li>
               <li >Game4<button type="button" style={{float: 'right'}} onClick={this.Game4}>Play</button></li>
+              <li >Game5<button type="button" style={{float: 'right'}} onClick={this.Game5}>Play</button></li>
             </ol>
             </div>
         
