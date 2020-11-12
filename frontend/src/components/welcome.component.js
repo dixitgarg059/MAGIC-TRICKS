@@ -67,7 +67,6 @@ export default class WELCOME extends Component {
 
             <h1>
                 WELCOME!!
-                
             </h1>
             </div>
         )
