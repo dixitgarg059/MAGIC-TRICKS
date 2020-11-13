@@ -101,3 +101,20 @@
   border-radius: 5px;
   margin-top: 10px;
 }
+.hand-card:hover{
+  box-shadow: 0 0 20px black;
+
+}
+.hand-card-focused{
+  box-shadow: 0 0 20px rgb(0, 0, 0);
+  /* width: 155px; */
+}
+.select-btn{
+  border:none;
+  background-color:rgb(2, 209, 112);
+  color:rgb(250, 250, 250);
+  border-radius:7px;
+}
+.select-btn:hover{
+  box-shadow: 0 0 40px rgb(11, 83, 26);
+}
