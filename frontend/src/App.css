@@ -1,4 +1,4 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&display=swap');.App {
   text-align: center;
 }
 
@@ -6,6 +6,7 @@
   height: 40vmin;
   pointer-events: none;
 }
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -35,4 +36,53 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.comp-2-card{
+  margin:10px;
+  box-shadow: 0px 0px 2px  rgb(2, 2, 2);
+  width:100px;
+  /* height: 100px; */
+}
+.comp-2-card-first{
+  margin:10px;
+  box-shadow: 0px 0px 5px rgb(25, 10, 231);
+  border: 12px yellow;
+  width:100px;
+  /* height: 100px; */
+}
+.comp-2-main{
+  /* background-color: black; */
+  /* height: 1600px; */
+}
+.comp-2-set{
+  margin-top:10px;
+  margin-bottom:10px;
+  display: flex;
+  align-items: center;
+}
+.comp-2-card-set{
+  display: flex;
+  flex-direction: row;
+}
+.comp-2-btn{
+  padding:0;
+  margin:0;
+  color: transparent;
+  border:0;
+  background-color: transparent;
+  border-radius: 50%;
+}
+.comp-2-btn:hover{
+  box-shadow: 0px 0px 4px black;
+}
+.logic-btn{
+  color:white;
+  background-color: black;
+  border: none;
+  border-radius:6px;
+  padding: 7px;
+}
+.logic-btn:hover{
+  box-shadow: 0 0 10px black;
 }
