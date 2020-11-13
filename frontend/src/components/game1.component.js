@@ -147,6 +147,7 @@ export default class Products extends Component {
                         <span style={{color:"red"}}>{this.state.str.substr(0,this.state.total_count)}</span>
                         <span>{this.state.str.substr(this.state.total_count)}</span>
                     </div>
+                    
                 </div>
                 <div>
 

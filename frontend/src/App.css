@@ -78,11 +78,26 @@
 }
 .logic-btn{
   color:white;
-  background-color: black;
+  background-color:black;
   border: none;
   border-radius:6px;
   padding: 7px;
 }
 .logic-btn:hover{
   box-shadow: 0 0 10px black;
+}
+.comp-3-btn{
+  border:none;
+  border-radius:10px;
+  padding: 10px;
+  margin: 3px;
+}
+.comp-3-btn:hover{
+  box-shadow: 0 0 10px black;
+}
+.comp-3-reset{
+  border:none;
+  background-color: yellow;
+  border-radius: 5px;
+  margin-top: 10px;
 }
