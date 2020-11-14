@@ -118,3 +118,15 @@
 .select-btn:hover{
   box-shadow: 0 0 40px rgb(11, 83, 26);
 }
+.play-card{
+  margin:20px;
+}
+.kingqueen-card{
+  margin:10px;
+  box-shadow: 0 0 1px black;
+
+
+}
+.kingqueen-card:hover{
+  box-shadow: 0 0 10px black;
+}
