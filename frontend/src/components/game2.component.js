@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import $ from "jquery";
+import '../App.css';
+
 var lt = new Array(11).fill(false);
 export default class Products extends Component {
     
@@ -28,43 +30,53 @@ export default class Products extends Component {
         $(".play").show();
         $(".loose").hide();
         $(".0").on('click', function(event){
-            $(event.delegateTarget).css("background-color","blue")
+            $(event.delegateTarget).css("background-color","blue");
+            $(event.delegateTarget).css("box-shadow","0 0 10px black");
             lt[0]=true;
         });
         $(".1").on('click', function(event){
             $(event.delegateTarget).css("background-color","blue")
+            $(event.delegateTarget).css("box-shadow","0 0 10px black");
             lt[1]=true;
         });
         $(".2").on('click', function(event){
             $(event.delegateTarget).css("background-color","blue")
+            $(event.delegateTarget).css("box-shadow","0 0 10px black");
             lt[2]=true;
         });
         $(".3").on('click', function(event){
             $(event.delegateTarget).css("background-color","blue")
+            $(event.delegateTarget).css("box-shadow","0 0 10px black");
             lt[3]=true;        
         });
         $(".4").on('click', function(event){
             $(event.delegateTarget).css("background-color","blue")
+            $(event.delegateTarget).css("box-shadow","0 0 10px black");
             lt[4]=true;
         });
         $(".5").on('click', function(event){
             $(event.delegateTarget).css("background-color","blue")
+            $(event.delegateTarget).css("box-shadow","0 0 10px black");
             lt[5]=true;
         });
         $(".6").on('click', function(event){
             $(event.delegateTarget).css("background-color","blue")
+            $(event.delegateTarget).css("box-shadow","0 0 10px black");
             lt[6]=true;
         });
         $(".7").on('click', function(event){
             $(event.delegateTarget).css("background-color","blue")
+            $(event.delegateTarget).css("box-shadow","0 0 10px black");
             lt[7]=true;
         });
         $(".8").on('click', function(event){
             $(event.delegateTarget).css("background-color","blue")
+            $(event.delegateTarget).css("box-shadow","0 0 10px black");
             lt[8]=true;
         });
         $(".9").on('click', function(event){
             $(event.delegateTarget).css("background-color","blue")
+            $(event.delegateTarget).css("box-shadow","0 0 10px black");
             lt[9]=true;
         });
 
@@ -92,6 +104,9 @@ export default class Products extends Component {
             for(var i=0;i<10;i++)
             {
                 $("." + String(i)).css("background-color","white")
+                $("." + String(i)).css("box-shadow","none");
+                // $("." + String(i)).addClass("kingqueen-card");
+
                 lt = new Array(11).fill(false);
 
             }
@@ -105,6 +120,10 @@ export default class Products extends Component {
             else{
                 
                 $("." + String(i)).css("background-color","white")
+                $("." + String(i)).css("box-shadow","none");
+                // $("." + String(i)).addClass("kingqueen-card");
+
+
             }
         }
         
@@ -145,20 +164,23 @@ export default class Products extends Component {
         return (
             <div>
       
-            <button type="button" onClick={this.Show_logic} style={{float: 'right'}} > Show Logic </button>
+            <button type="button" onClick={this.Show_logic} style={{float: 'right'}} className='logic-btn'> Show Logic </button>
 
 
             <div className="container" style={
               {
-                  marginBottom:'25px'
+                  marginBottom:'25px',
+                  backgroundColor:'white',
+                //   color:'white'
+                borderRadius:'10px',
+                boxShadow:'0 0 5px black'
               }
             }>
-                <h4>0-1 Game</h4>
+                <h4>King-Queen Game</h4>
                 Alica and Bob are playing a game <br></br>
-                Initially they have a binary string s consisting of only characters 0 and 1. <br></br>
+                There are some kings and queens in the order given below. <br></br>
                 Alice and Bob make alternating moves: Alice makes the first move, Bob makes the second move, 
-                Alice makes the third one, and so on. During each move, the current player must choose two 
-                <b> different </b>adjacent characters of string s and delete them.
+                Alice makes the third one, and so on. During each move, the current player must choose an adjacent pair of king and queen and marry them off.
                 <br></br>
                 If a player can't make any move, they lose. Both players play optimally.
 
@@ -171,17 +193,28 @@ export default class Products extends Component {
                   marginBottom:'18px'
               }
             }>
+                {
+                    (()=>{
+                        if(this.state.Player==="Bob")
+                        return <img src={require('../assets/man.png')} width='40px'></img>
+                        else return <img src={require('../assets/woman.png')} width='40px'></img>
+
+                    })()
+                }
                 {this.state.Player}'s Turn
             </div> 
-            <div className="container">
+            <div className="container" style={{display:"flex"}}>
                   {this.state.cards1.map((char,index) =>(
-                      <span class = {index} style={
-                        {
-                         border: '1px solid black',
-                         padding: '11.4px 12px',
+                    //   <span class = {index} style={
+                    //     {
+                    //      border: '1px solid black',
+                    //      padding: '11.4px 12px',
 
-                        }
-                      } > {char} </span>
+                    //     }
+                    //   } > {char} </span>
+                    <div  className='kingqueen-card' class={`${index} kingqueen-card`} >
+                        <img src={char=='0'?require(`../card_pics/${Math.floor(Math.random()*4)*13+12}.png`):require(`../card_pics/${Math.floor(Math.random()*4)*13+13}.png`)} width="100px"></img>
+                    </div>
                   ))}
               </div>
 
@@ -191,11 +224,11 @@ export default class Products extends Component {
                   marginTop:'18px'
               }
           }>
-  <nav className="navbar navbar-expand-lg navbar-light bg-light">
+  <nav className="navbar navbar-expand-lg navbar-light ">
       <div className="collapse navbar-collapse">
           <ul className="navbar-nav mr-auto">
-          <li class = "play"><button type="button" onClick={this.Erase}>Erase</button></li>
-          <li class = "loose"><button type="button" onClick={this.Loose}>Finish</button></li>
+          <li class = "play"><button type="button" onClick={this.Erase} className='logic-btn'>Marry them off</button></li>
+          <li class = "loose"><button type="button" onClick={this.Loose} className='logic-btn'>Finish</button></li>
               
           </ul>
       </div>
