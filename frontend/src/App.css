@@ -111,12 +111,12 @@
 }
 .select-btn{
   border:none;
-  background-color:rgb(2, 209, 112);
-  color:rgb(250, 250, 250);
+  background-color:rgb(255, 255, 255);
+  color:rgb(0, 0, 0);
   border-radius:7px;
 }
 .select-btn:hover{
-  box-shadow: 0 0 40px rgb(11, 83, 26);
+  box-shadow: 0 0 5px rgb(0, 0, 0);
 }
 .play-card{
   margin:20px;
@@ -129,4 +129,17 @@
 }
 .kingqueen-card:hover{
   box-shadow: 0 0 10px black;
+}
+
+.comp-4-btn{
+  border:none;
+  border-radius:10px;
+  padding: 10px;
+  margin: 3px;
+  background-color: rgb(238, 237, 237);
+}
+.comp-4-btn:hover{
+  box-shadow: 0 0 10px black;
+  background-color: yellow;
+  /* height: 100px; */
 }
