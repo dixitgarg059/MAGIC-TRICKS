@@ -170,10 +170,10 @@ export default class Products extends Component {
             <div className="container" style={
               {
                   marginBottom:'25px',
-                  backgroundColor:'white',
+                //   backgroundColor:'white',
                 //   color:'white'
-                borderRadius:'10px',
-                boxShadow:'0 0 5px black'
+                // borderRadius:'10px',
+                // boxShadow:'0 0 5px black'
               }
             }>
                 <h4>King-Queen Game</h4>
@@ -203,7 +203,7 @@ export default class Products extends Component {
                 }
                 {this.state.Player}'s Turn
             </div> 
-            <div className="container" style={{display:"flex"}}>
+            <div className="container" style={{display:"flex",flexWrap:"wrap"}}>
                   {this.state.cards1.map((char,index) =>(
                     //   <span class = {index} style={
                     //     {
@@ -224,15 +224,15 @@ export default class Products extends Component {
                   marginTop:'18px'
               }
           }>
-  <nav className="navbar navbar-expand-lg navbar-light ">
-      <div className="collapse navbar-collapse">
+  {/* <nav className="navbar navbar-expand-lg navbar-light "> */}
+      {/* <div className="collapse navbar-collapse"> */}
           <ul className="navbar-nav mr-auto">
           <li class = "play"><button type="button" onClick={this.Erase} className='logic-btn'>Marry them off</button></li>
           <li class = "loose"><button type="button" onClick={this.Loose} className='logic-btn'>Finish</button></li>
               
           </ul>
-      </div>
-  </nav>
+      {/* </div> */}
+  {/* </nav> */}
 </div>
           </div>
       )
