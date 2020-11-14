@@ -118,3 +118,6 @@
 .select-btn:hover{
   box-shadow: 0 0 40px rgb(11, 83, 26);
 }
+.play-card{
+  margin:20px;
+}
