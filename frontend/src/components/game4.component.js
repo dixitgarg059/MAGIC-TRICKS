@@ -97,6 +97,10 @@ export default class GAME4 extends Component {
         console.log(d2);
         console.log(d3);
     }
+    helper=(e)=>{
+        if(e-1<this.state.stage) return 'green';
+        else return 'grey';
+    }
     render() {
         return (
             <div>
@@ -105,6 +109,30 @@ export default class GAME4 extends Component {
                 <h1>
                     27 Card Trick
             </h1>
+                <div style={{ position: 'relative', height: '30px', width: '100%', }}>
+                <div style={{marginTop:'10px',width:'100%',backgroundColor:'rgb(206, 206, 206)', height:'10px', position:'absolute'}}></div>
+                    <div className={
+                        `progressbar${this.state.stage-1}`
+                    } style={{marginTop:'10px'}}></div>
+{
+                    [
+                        'Choose a Card', 'Choose a number', '#1 Select deck', '#2 Select deck', '#3 Select deck', 'Our Guess'
+                    ].map(
+                        (str,index)=>{
+                            return  <div  className='circle' style={{
+                                left:`${index*20}%`,
+                                backgroundColor:this.helper(index+1),
+                                color: this.helper(index+1),
+                            }}>{str}</div>;
+
+                        }
+                    )
+                }
+                  
+
+                </div>
+                <div style={{height:'50px'}}></div>
+
                 {
                     (() => {
 
@@ -147,6 +175,8 @@ export default class GAME4 extends Component {
                         }
                         if (this.state.stage == 3 || this.state.stage == 4 || this.state.stage == 5) {
                             return <div>
+                                <div>Choose the deck your card is present in.</div>
+
                                 <div style={{
                                     fontSize: '30px',
                                     fontFamily: 'Alegreya Sans SC'
@@ -186,25 +216,34 @@ export default class GAME4 extends Component {
                                 flexWrap: 'wrap'
                             }}>
                                 <div style={{
-                                    width:'400px',
+                                    width: '400px',
                                     height: '500px'
                                 }}>
-                                <HAND hand={deck} width={150} margin={100} focused={this.state.favNum} />
-                               </div>
+                                    <HAND hand={deck} width={150} margin={100} focused={this.state.favNum} />
+                                </div>
                                 <div style={{
-                                    fontFamily:'Alegreya Sans SC',
-                                    fontSize: '30px'
+                                    // fontFamily: 'Alegreya Sans SC',
+                                    fontSize: '20px'
                                 }}>
-                                    Your card is: <img src={require(`../card_pics/${deck[this.state.favNum-1]}.png`)} width="100px"></img><br></br>
+                                    Your card is: <img src={require(`../card_pics/${deck[this.state.favNum - 1]}.png`)} width="100px"></img><br></br>
                                     At the position {this.state.favNum} (Your Number) in the deck<br></br>
-                                    <button className='logic-btn'onClick={
-                                        ()=>{
+                                    <button className='logic-btn' onClick={
+                                        () => {
                                             this.setState({
-                                                stage:1,
+                                                stage: 1,
                                             })
 
                                         }
                                     }>Play Again</button>
+                                    <button className='logic-btn' style={{marginLeft:'30px'}} onClick={
+                                        ()=>{
+                                            this.props.history.push({
+                                                pathname: '/Play/Game4/Logic'
+                                            });
+                                        }
+                                    }
+                                        
+                                    >Logic</button>
                                 </div>
                             </div>
                         }

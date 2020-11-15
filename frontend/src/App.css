@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&display=swap');.App {
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&display=swap');
+.App {
   text-align: center;
 }
 
@@ -148,4 +149,87 @@
   box-shadow: 0 0 10px black;
   background-color: yellow;
   /* height: 100px; */
+}
+.progressbar1{
+  height:10px;
+  width: 20%;
+  background-color:rgb(59, 168, 59);
+  position: absolute;
+  animation-name: move1;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  /* margin-top:30px; */
+  /* margin-bottom:30px; */
+}
+@keyframes move1{
+  from {width:0%;}
+  to{width:20%;}
+}
+.progressbar2{
+  height:10px;
+  width: 40%;
+  background-color:rgb(59, 168, 59);
+  position: absolute;
+  animation-name: move2;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  /* margin-top:30px; */
+  /* margin-bottom:30px; */
+}
+@keyframes move2{
+  from {width:20%;}
+  to{width:40%;}
+}
+.progressbar3{
+  height:10px;
+  width: 60%;
+  background-color:rgb(59, 168, 59);
+  position: absolute;
+  animation-name: move3;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  /* margin-top:30px; */
+  /* margin-bottom:30px; */
+}
+@keyframes move3{
+  from {width:40%;}
+  to{width:60%;}
+}
+.progressbar4{
+  height:10px;
+  width: 80%;
+  background-color:rgb(59, 168, 59);
+  animation-name: move4;
+  position: absolute;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  /* margin-top:30px; */
+  /* margin-bottom:30px; */
+}
+@keyframes move4{
+  from {width:60%;}
+  to{width:80%;}
+}
+.progressbar5{
+  height:10px;
+  width: 100%;
+  background-color: rgb(59, 168, 59);
+  animation-name: move5;
+  position: absolute;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  /* margin-top:30px; */
+  /* margin-bottom:30px; */
+}
+@keyframes move5{
+  from {width:80%;}
+  to{width:100%;}
+}
+.circle{
+  height:30px;
+  width:30px;
+  border-radius:50%;
+  position: absolute;
+  font-size:10px;
+  padding-top:30px;
 }
