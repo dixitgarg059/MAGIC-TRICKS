@@ -120,6 +120,12 @@
 }
 .play-card{
   margin:20px;
+  /* border: none; */
+  /* background-color: none; */
+
+}
+.play-card:hover{
+  box-shadow: 0 0 20px black;
 }
 .kingqueen-card{
   margin:10px;
