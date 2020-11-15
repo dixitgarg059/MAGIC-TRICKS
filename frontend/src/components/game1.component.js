@@ -117,16 +117,7 @@ export default class Products extends Component {
                             position: 'relative',
                             left: '100px'
                         }}>
-                            {/* {this.state.cards1.map((e,index) => {
-                                let path = require(`../card_pics/${e}.png`);
-                                if(index==0)
-                                return  <div className='comp-2-card-first'>
-                                <img src={path} key={e} alt={e} width='100px'></img>
-                            </div>;
-                                return <div className='comp-2-card'>
-                                    <img src={path} key={e} alt={e} width='100px'></img>
-                                </div>;
-                            })} */}
+                          
                             <HAND hand={reversedArray(this.state.cards1)} width={100} margin={10} focused={this.state.cards1.length} />
                         </div>
                     </div>
@@ -142,16 +133,7 @@ export default class Products extends Component {
                             position: 'relative',
                             left: '100px'
                         }}>
-                            {/* {this.state.cards2.map((e,index) => {
-                                let path = require(`../card_pics/${e}.png`);
-                                if(index==0)
-                                return  <div className='comp-2-card-first'>
-                                <img src={path} key={e} alt={e} width='100px'></img>
-                            </div>;
-                                return <div className='comp-2-card'>
-                                    <img src={path} key={e} alt={e} width='100px'></img>
-                                </div>;
-                            })} */}
+                         
                             <HAND hand={reversedArray(this.state.cards2)} width={100} margin={10} focused={this.state.cards2.length} />
 
                         </div>

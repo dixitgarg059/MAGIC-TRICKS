@@ -156,7 +156,7 @@ export default class GAME4 extends Component {
                         if (this.state.stage == 2) {
                             return <div>
                                 <div>Click on your favorite number</div>
-                                <div style={{ top: '100px', position: 'relative' }}>
+                                <div style={{ top: '10px', position: 'relative' ,alignItems:'center'}}>
                                     {Array.from({ length: 27 }, (_, i) => i + 1).map((e) => {
                                         return <button className="comp-4-btn" onClick={
                                             () => {
@@ -181,16 +181,16 @@ export default class GAME4 extends Component {
                                     fontSize: '30px',
                                     fontFamily: 'Alegreya Sans SC'
                                 }}>Your Number: {this.state.favNum}</div>
-                                <div style={{ position: "static", left: 0, display: "flex", flexWrap: 'wrap' }}>
+                                <div style={{ position: "static", left: 0, display: "flex", flexWrap: 'wrap', justifyContent:'space-evenly' }}>
                                     {
                                         [1, 2, 3].map(
                                             (e) => {
                                                 let d = (e == 1) ? this.state.deck1 : (e == 2) ? this.state.deck2 : this.state.deck3;
                                                 return <div>
-                                                    <div style={{ width: 200, height: 200, margin: 50 }}>
+                                                    <div style={{ width: '200px', height: '200px' }}>
                                                         <HAND hand={d} width={150} margin={100} focused={-1} />
                                                     </div>
-                                                    <div style={{ marginTop: "200px", marginLeft: "150px", position: "relative" }}>
+                                                    <div style={{ marginTop: "200px", marginLeft: "100px", position: "relative" }}>
                                                         <button className="select-btn" onClick={
                                                             () => {
                                                                 this.selectDeck(e)

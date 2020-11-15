@@ -102,10 +102,14 @@
   border-radius: 5px;
   margin-top: 10px;
 }
-.hand-card:hover{
+/* .hand-card:hover{
   box-shadow: 0 0 20px black;
 
-}
+} */
+/* .hand-card{
+  box-shadow: 0 0 2px black;
+
+} */
 .hand-card-focused{
   box-shadow: 0 0 20px rgb(0, 0, 0);
   /* width: 155px; */
@@ -141,7 +145,7 @@
 .comp-4-btn{
   border:none;
   border-radius:10px;
-  padding: 10px;
+  padding: 50px;
   margin: 3px;
   background-color: rgb(238, 237, 237);
 }
