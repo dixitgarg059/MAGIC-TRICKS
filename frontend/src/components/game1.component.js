@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import '../App.css';
+import HAND from './hand.component';
+import { PassThrough } from 'stream';
 export default class Products extends Component {
 
     constructor(props) {
@@ -14,17 +16,17 @@ export default class Products extends Component {
             str: "NUMBERPHILE"
         }
     }
-    getGCD=(a,b)=>{
-        if(a>b) return this.getGCD(b,a);
-        if(a==0) return b;
-        return this.getGCD(b%a,a);
+    getGCD = (a, b) => {
+        if (a > b) return this.getGCD(b, a);
+        if (a == 0) return b;
+        return this.getGCD(b % a, a);
     }
-    getMagicNumber=n=>{
+    getMagicNumber = n => {
         let lcm = 1;
-        for(let i = 2;i<n;i++){
-            lcm = (lcm * i)/(this.getGCD(lcm,i));  
+        for (let i = 2; i < n; i++) {
+            lcm = (lcm * i) / (this.getGCD(lcm, i));
         }
-        return lcm-1;
+        return lcm - 1;
 
     }
     // componentDidMount() {
@@ -38,7 +40,7 @@ export default class Products extends Component {
     //     //     })
     //     // })
     // }
-    updateNumber=n=>{
+    updateNumber = n => {
 
 
     }
@@ -109,8 +111,13 @@ export default class Products extends Component {
                                 <img src={require(`../assets/left-arrow.png`)} width="30px"></img>
                             </button>
                         </span>
-                        <div className='comp-2-card-set'>
-                            {this.state.cards1.map((e,index) => {
+                        <div className='comp-2-card-set' style={{
+                            width: '100px',
+                            height: '150px',
+                            position: 'relative',
+                            left: '100px'
+                        }}>
+                            {/* {this.state.cards1.map((e,index) => {
                                 let path = require(`../card_pics/${e}.png`);
                                 if(index==0)
                                 return  <div className='comp-2-card-first'>
@@ -119,7 +126,8 @@ export default class Products extends Component {
                                 return <div className='comp-2-card'>
                                     <img src={path} key={e} alt={e} width='100px'></img>
                                 </div>;
-                            })}
+                            })} */}
+                            <HAND hand={reversedArray(this.state.cards1)} width={100} margin={10} focused={this.state.cards1.length} />
                         </div>
                     </div>
                     <div className='comp-2-set'>
@@ -128,8 +136,13 @@ export default class Products extends Component {
                                 <img src={require(`../assets/left-arrow.png`)} width="30px"></img>
                             </button>
                         </span>
-                        <div className='comp-2-card-set'>
-                            {this.state.cards2.map((e,index) => {
+                        <div className='comp-2-card-set' style={{
+                            width: '100px',
+                            height: '150px',
+                            position: 'relative',
+                            left: '100px'
+                        }}>
+                            {/* {this.state.cards2.map((e,index) => {
                                 let path = require(`../card_pics/${e}.png`);
                                 if(index==0)
                                 return  <div className='comp-2-card-first'>
@@ -138,22 +151,29 @@ export default class Products extends Component {
                                 return <div className='comp-2-card'>
                                     <img src={path} key={e} alt={e} width='100px'></img>
                                 </div>;
-                            })}
+                            })} */}
+                            <HAND hand={reversedArray(this.state.cards2)} width={100} margin={10} focused={this.state.cards2.length} />
+
                         </div>
                     </div>
 
 
-                    <div style={{fontSize:60,fontFamily:'Alegreya Sans SC'}}>
-                        <span style={{color:"red"}}>{this.state.str.substr(0,this.state.total_count)}</span>
+                    <div style={{ fontSize: 60, fontFamily: 'Alegreya Sans SC' }}>
+                        <span style={{ color: "red" }}>{this.state.str.substr(0, this.state.total_count)}</span>
                         <span>{this.state.str.substr(this.state.total_count)}</span>
                     </div>
-                    
+
                 </div>
                 <div>
 
                 </div>
-                
+
             </div >
         )
     }
+}
+function reversedArray(arr){
+    let brr = arr.slice();
+    brr.reverse();
+    return brr;
 }
