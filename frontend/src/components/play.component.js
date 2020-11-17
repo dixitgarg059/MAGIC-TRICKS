@@ -33,6 +33,11 @@ export default class PLAY extends Component {
       pathname: '/Play/Game5/'
     });
   }
+  Game6 = () => {
+    this.props.history.push({
+      pathname: '/Play/Game6/'
+    });
+  }
   render() {
     return (
       <div>
@@ -87,6 +92,15 @@ export default class PLAY extends Component {
               <p className="card-text">!!! SPOILER ALERT !!! </p>
               <p className="card-text">You will be mind blown!!! </p>
               <button className="btn btn-outline-danger" onClick={this.Game5}>Play</button>
+            </div>
+          </div>
+          <div className="card play-card" style={{ width: "18rem" }}>
+            <img className="card-img-top" src={require('../assets/knight.jpg')} alt="Kruskal" />
+            <div className="card-body">
+              <h5 className="card-title">Knight vs Knight</h5>
+              <p className="card-text">Place the knights one by one to see who gets in limbo!!! </p>
+              <p className="card-text"></p>
+              <button className="btn btn-outline-danger" onClick={this.Game6}>Play</button>
             </div>
           </div>
         </div>

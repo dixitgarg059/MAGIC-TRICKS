@@ -10,6 +10,7 @@ import GAME2 from './components/game2.component'
 import GAME3 from './components/game3.component'
 import GAME4 from './components/game4.component'
 import GAME5 from './components/game5.component'
+import GAME6 from './components/game6.component'
 
 import LOGIC1 from './components/logic1.component'
 import LOGIC2 from './components/logic2.component'
@@ -49,6 +50,7 @@ function App() {
           <Route path="/Play/Game3" exact component={GAME3} />
           <Route path="/Play/Game4" exact component={GAME4} />
           <Route path="/Play/Game5" exact component={GAME5} />
+          <Route path="/Play/Game6" exact component={GAME6} />
           <Route path="/Play/Game1/Logic" exact component={LOGIC1} />
           <Route path="/Play/Game2/Logic" exact component={LOGIC2} />
           <Route path="/Play/Game3/Logic" exact component={LOGIC3} />
