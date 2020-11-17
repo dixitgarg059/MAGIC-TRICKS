@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import '../App.css';
+import Alert from 'react-s-alert';
 export default class GAME3 extends Component {
 
 
@@ -14,7 +15,7 @@ export default class GAME3 extends Component {
         }
     }
     Show_logic = () => {
-        alert("UNLOCK LOGIC ??\n");
+        // alert("UNLOCK LOGIC ??\n");
         this.props.history.push({
             pathname: '/Play/Game3/Logic'
         });
@@ -27,9 +28,20 @@ export default class GAME3 extends Component {
             // alert("Hellow");
             let temp = [...this.state.currentArray,e];
             for(let i=0;i<14;i++){
-                if(this.NotisSq(temp[i]+temp[i+1])) return;
+                if(this.NotisSq(temp[i]+temp[i+1])) {
+                    Alert.error("Wrong sequence!!! Try Again.",{
+                        offset:100,
+                        beep:true,
+                        timeout:2000,
+                    })
+                    
+                    return;}
             }
-            alert("You've been successfull!!! Congrats");
+            Alert.success("You've been successfull!!! Congrats",{
+                offset:100,
+                timeout:2000,
+                beep:true
+            });
         }
         
     }
@@ -56,28 +68,31 @@ export default class GAME3 extends Component {
     render() {
         return (
             <div>
+                <Alert stack={{limit: 10, spacing: 50}} />
+                <br></br>
                 <h1>
-                    Square Sum Problem
+                   <strong> Square Sum</strong>
             </h1>
-
+<br></br>
                 <div>
-                    <button className='logic-btn' type="button" onClick={this.Show_logic} style={{ float: 'right' }} > Show Logic </button>
+                    <button className='btn  btn-outline-danger' type="button" onClick={this.Show_logic} style={{ float: 'right' }} > Show Logic </button>
                 </div>
                 <div style={{marginRight:"20px"}}>
-                    Order the numbers from 1 to 15 such that sum of any to adjacent number leads to a perfect square. Note that each number has to be used and only once.
+                    Order the numbers from 1 to 15 such that sum of any two adjacent numbers leads to a perfect square. Note that each number has to be used.
             </div>
             <br></br>
             <div style={{color:"white"}}>
                 {
                     this.state.availableArray.map((e)=>{
                         if(this.state.currentArray.indexOf(e)!=-1)
-                        return <button className='c-btn'>{e}</button>;
-                        else return <button className='c-btn' style={{backgroundColor:"black",color:"white"}} onClick={()=>{this.pushElementToCurrentArray(e)}}>{e}</button>;
+                        return <button className='c-btn' style={{color:'white',backgroundColor:'black'}}>{e}</button>;
+                        else return <button className='c-btn' style={{backgroundColor:"white",color:"black"}} onClick={()=>{this.pushElementToCurrentArray(e)}}>{e}</button>;
                     })
                     
                 }
             </div>
-            <div style={{minHeight:"100px",borderRadius:"10px",backgroundColor:"white",boxShadow:"0 0 4px black",marginTop:"10px"}}>
+            <br></br>
+            <div style={{minHeight:"100px",borderRadius:"10px",backgroundColor:"black",boxShadow:"0 0 4px black",marginTop:"10px"}}>
                 {
                     this.state.currentArray.map((e,index)=>{
                         let temp = this.state.currentArray;
@@ -90,8 +105,9 @@ export default class GAME3 extends Component {
                     })
                 }
             </div>
+            <br></br>
             <div>
-                <button className='comp-3-reset' onClick={this.reset}>Reset</button>
+                <button className='btn btn-outline-danger' onClick={this.reset}>Reset</button>
                 {/* <button className='comp-3-reset' onClick={this.reset}>Reset</button> */}
             </div>
             </div>

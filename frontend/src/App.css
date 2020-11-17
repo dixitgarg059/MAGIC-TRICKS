@@ -262,9 +262,21 @@
   padding-top:30px;
 }
 .home-back{
-  background-image: url('./assets/home.jpg');
-  background-size: 100% 100%;
+  /* background-image: url('./assets/home.jpg');
+  background-size: cover;
+  background-repeat: no-repeat; */
+  /* height:90vh; */
+  /* width: 100 */
+  /* background: url("https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg"); */
+  height: 93vh;
+  background-position: center;
   background-repeat: no-repeat;
-  height:100%;
-  width:100%;
+  background-size: cover;
+  /* position: fixed; */
+  background-position: center;
+  /* back */
+  /* height:2000px; */
+  /* width:900px; */
+  /* width:2000px; */
+  /* background-color: white; */
 }

@@ -97,8 +97,8 @@ export default class GAME4 extends Component {
         console.log(d2);
         console.log(d3);
     }
-    helper=(e)=>{
-        if(e-1<this.state.stage) return 'rgb(138, 241, 138)';
+    helper = (e) => {
+        if (e - 1 < this.state.stage) return 'rgb(138, 241, 138)';
         else return 'grey';
     }
     render() {
@@ -107,32 +107,32 @@ export default class GAME4 extends Component {
 
 
                 <h1>
-                   <strong> 27 Card Trick</strong>
-            </h1>
-            <br></br>
+                    <strong> 27 Card Trick</strong>
+                </h1>
+                <br></br>
                 <div style={{ position: 'relative', height: '30px', width: '100%', }}>
-                <div style={{marginTop:'10px',width:'100%',backgroundColor:'rgb(206, 206, 206)', height:'10px', position:'absolute'}}></div>
+                    <div style={{ marginTop: '10px', width: '100%', backgroundColor: 'rgb(206, 206, 206)', height: '10px', position: 'absolute' }}></div>
                     <div className={
-                        `progressbar${this.state.stage-1}`
-                    } style={{marginTop:'10px'}}></div>
-{
-                    [
-                        'Choose a Card', 'Choose a number', '#1 Select deck', '#2 Select deck', '#3 Select deck', 'Our Guess'
-                    ].map(
-                        (str,index)=>{
-                            return  <div  className='circle' style={{
-                                left:`${index*20}%`,
-                                backgroundColor:this.helper(index+1),
-                                color: this.helper(index+1),
-                            }}>{str}</div>;
+                        `progressbar${this.state.stage - 1}`
+                    } style={{ marginTop: '10px' }}></div>
+                    {
+                        [
+                            'Choose a Card', 'Choose a number', '#1 Select deck', '#2 Select deck', '#3 Select deck', 'Our Guess'
+                        ].map(
+                            (str, index) => {
+                                return <div className='circle' style={{
+                                    left: `${index * 20}%`,
+                                    backgroundColor: this.helper(index + 1),
+                                    color: this.helper(index + 1),
+                                }}>{str}</div>;
 
-                        }
-                    )
-                }
-                  
+                            }
+                        )
+                    }
+
 
                 </div>
-                <div style={{height:'60px'}}></div>
+                <div style={{ height: '60px' }}></div>
 
                 {
                     (() => {
@@ -158,8 +158,10 @@ export default class GAME4 extends Component {
                         }
                         if (this.state.stage == 2) {
                             return <div>
+                                <br></br>
                                 <div>Click on your favorite number</div>
-                                <div style={{ top: '10px', position: 'relative' ,alignItems:'center'}}>
+                                <br></br>
+                                <div style={{ top: '10px', position: 'relative', alignItems: 'center' }}>
                                     {Array.from({ length: 27 }, (_, i) => i + 1).map((e) => {
                                         return <button className="comp-4-btn" onClick={
                                             () => {
@@ -178,29 +180,30 @@ export default class GAME4 extends Component {
                         }
                         if (this.state.stage == 3 || this.state.stage == 4 || this.state.stage == 5) {
                             return <div>
+                                <br></br>
                                 <div>Choose the deck your card is present in.</div>
-
+                                <br></br>
                                 <div style={{
                                     fontSize: '30px',
                                     fontFamily: 'Alegreya Sans SC'
                                 }}>Your Number: {this.state.favNum}</div>
-                                <div style={{ position: "static", left: 0, display: "flex", flexWrap: 'wrap', justifyContent:'space-evenly' }}>
+                                <div style={{ position: "static", left: 0, display: "flex", flexWrap: 'wrap', justifyContent: 'space-evenly' }}>
                                     {
                                         [1, 2, 3].map(
                                             (e) => {
                                                 let d = (e == 1) ? this.state.deck1 : (e == 2) ? this.state.deck2 : this.state.deck3;
                                                 return <div>
                                                     <div style={{ width: '200px', height: '200px' }}>
-                                                        <HAND hand={d} width={150} margin={100} focused={-1} />
+                                                        <HAND hand={d} width={150} margin={100} focused={-1} straight={1} />
                                                     </div>
                                                     <div style={{ marginTop: "200px", marginLeft: "100px", position: "relative" }}>
-                                                        <button className="select-btn" onClick={
+                                                        <button className="btn btn-outline-light" onClick={
                                                             () => {
                                                                 this.selectDeck(e)
                                                             }
                                                         }>
-                                                            <img src={require('../assets/cards.png')} width='40px'></img>
-                                                            {e}</button>
+                                                            {/* <img src={require('../assets/cards.png')} width='40px'></img> */}
+                                                            Select #{e}</button>
                                                     </div>
                                                 </div>
                                             }
@@ -230,7 +233,8 @@ export default class GAME4 extends Component {
                                 }}>
                                     Your card is: <img src={require(`../card_pics/${deck[this.state.favNum - 1]}.png`)} width="100px"></img><br></br>
                                     At the position {this.state.favNum} (Your Number) in the deck<br></br>
-                                    <button className='logic-btn' onClick={
+                                    <br></br>
+                                    <button className='btn btn-outline-danger' onClick={
                                         () => {
                                             this.setState({
                                                 stage: 1,
@@ -238,14 +242,14 @@ export default class GAME4 extends Component {
 
                                         }
                                     }>Play Again</button>
-                                    <button className='logic-btn' style={{marginLeft:'30px'}} onClick={
-                                        ()=>{
+                                    <button className='btn btn-outline-danger' style={{ marginLeft: '30px' }} onClick={
+                                        () => {
                                             this.props.history.push({
                                                 pathname: '/Play/Game4/Logic'
                                             });
                                         }
                                     }
-                                        
+
                                     >Logic</button>
                                 </div>
                             </div>
