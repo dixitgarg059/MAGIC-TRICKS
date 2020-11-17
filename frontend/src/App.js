@@ -16,6 +16,8 @@ import LOGIC1 from './components/logic1.component'
 import LOGIC2 from './components/logic2.component'
 import LOGIC3 from './components/logic3.component'
 import LOGIC4 from './components/logic4.component'
+import LOGIC5 from './components/logic5.component'
+import LOGIC6 from './components/logic6.component'
 function App() {
 
   const [active,setActive] = useState('');
@@ -55,6 +57,8 @@ function App() {
           <Route path="/Play/Game2/Logic" exact component={LOGIC2} />
           <Route path="/Play/Game3/Logic" exact component={LOGIC3} />
           <Route path="/Play/Game4/Logic" exact component={LOGIC4} />
+          <Route path="/Play/Game5/Logic" exact component={LOGIC5} />
+          <Route path="/Play/Game6/Logic" exact component={LOGIC6} />
         </div>
       </div>
     </Router>

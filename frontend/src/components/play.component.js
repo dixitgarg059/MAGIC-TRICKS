@@ -57,7 +57,7 @@ export default class PLAY extends Component {
             <img className="card-img-top" src={require('../assets/27cards.jpg')} alt="27 cards trick" />
             <div className="card-body">
               <h5 className="card-title">27 Cards</h5>
-              <p className="card-text">Choose the decks your card is in, while we guess your card!</p>
+              <p className="card-text">Choose the decks your card is in, while we guess your card!</p> 
               <button className="btn btn-outline-danger" onClick={this.Game4}>Play</button>
             </div>
           </div>

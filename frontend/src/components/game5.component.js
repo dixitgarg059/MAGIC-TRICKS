@@ -23,13 +23,13 @@ export default class GAME5 extends Component {
     // //     //     })
     // //     // })
     // // }
-    // Show_logic=() => {
-    //     if(!window.confirm("UNLOCK LOGIC ?"))
-    //         return 
-    //     this.props.history.push({
-    //         pathname:'/Play/Game1/Logic'
-    //     });
-    // }
+    Show_logic=() => {
+        if(!window.confirm("UNLOCK LOGIC ?"))
+            return 
+        this.props.history.push({
+            pathname:'/Play/Game5/Logic'
+        });
+    }
     // Shuffle_left=() => {
     //    this.setState({total_count:this.state.total_count+1})
     //    if(this.state.total_count >=  this.state.limit)
