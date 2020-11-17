@@ -13,7 +13,7 @@ export default class Products extends Component {
             cards2: [4, 3, 2, 1],
             total_count: 0,
             limit: 11,
-            str: "NUMBERPHILE"
+            str: "ABRACADABRA"
         }
     }
     getGCD = (a, b) => {
