@@ -3,6 +3,7 @@ import axios from 'axios';
 import '../App.css';
 import HAND from './hand.component';
 import { PassThrough } from 'stream';
+import Alert from 'react-s-alert';
 export default class Products extends Component {
 
     constructor(props) {
@@ -54,7 +55,12 @@ export default class Products extends Component {
     Shuffle_left = () => {
         this.setState({ total_count: this.state.total_count + 1 })
         if (this.state.total_count >= this.state.limit) {
-            alert("Finished Shuffling,you can see first element of both are " + String(this.state.cards1[0]))
+            Alert.success("Finished Shuffling,you can see first element of both are " + String(this.state.cards1[0]),{
+                offset:100,
+                beep:true,
+                timeout:3000
+
+            })
 
             this.state.cards1.shift();
             this.state.cards2.shift();
@@ -77,7 +83,11 @@ export default class Products extends Component {
     Shuffle_right = () => {
         this.setState({ total_count: this.state.total_count + 1 })
         if (this.state.total_count >= this.state.limit) {
-            alert("Finished Shuffling,you can see first element of both are " + String(this.state.cards1[0]))
+            Alert.success("Finished Shuffling,you can see first element of both are " + String(this.state.cards1[0]),{
+                offset:100,
+                beep:true,
+                timeout:3000
+            })
             this.state.cards1.shift();
             this.state.cards2.shift();
             this.setState({ total_count: 0 });
@@ -100,11 +110,16 @@ export default class Products extends Component {
     render() {
         return (
             <div className='comp-2-main'>
+                <Alert stack={{limit: 10, spacing: 50}} />
+
+                <br></br>
+                <h1><strong>Chinese Remainder</strong></h1>
+                <br></br>
                 <div style={{}}>Rotate either of the decks using the left arrows in any order until the letters of the word {this.state.str} are all used up and let the magic unfold.</div>
-
-                <button className='logic-btn' type="button" onClick={this.Show_logic} style={{ float: 'right' }} > Show Logic </button>
+<br></br>
+                <button className='btn btn-outline-danger' type="button" onClick={this.Show_logic} style={{ float: 'right' }} > Show Logic </button>
                 <div>
-
+                    <br></br>
                     <div className='comp-2-set'>
                         <span>
                             <button className="comp-2-btn" onClick={this.Shuffle_left}>
@@ -121,6 +136,7 @@ export default class Products extends Component {
                             <HAND hand={reversedArray(this.state.cards1)} width={100} margin={10} focused={this.state.cards1.length} />
                         </div>
                     </div>
+                    <br></br>
                     <div className='comp-2-set'>
                         <span>
                             <button className="comp-2-btn" onClick={this.Shuffle_right}>
@@ -138,6 +154,7 @@ export default class Products extends Component {
 
                         </div>
                     </div>
+                    <br></br>
 
 
                     <div style={{ fontSize: 60, fontFamily: 'Alegreya Sans SC' }}>

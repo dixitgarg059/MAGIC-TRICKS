@@ -17,7 +17,7 @@ export default class WELCOME extends Component {
             // backgroundSize:'100% 100%',
             // backgroundImage:`url(${_img})`,
             }}>
-                {/* <img src={require("../assets/home.jpg")} width="100%" height="100%"></img> */}
+                {/* <img src={require("../assets/home.jpg")} width="100%" height="925em"></img> */}
 
 
             </div>

@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-
+import 'react-s-alert/dist/s-alert-default.css';
+import 'react-s-alert/dist/s-alert-css-effects/slide.css';
 import "bootstrap/dist/css/bootstrap.min.css"
 import PLAY from './components/play.component'
 import WELCOME from './components/welcome.component'
@@ -22,7 +23,7 @@ function App() {
 
   return (
     <Router>
-      <div>
+      <div style={{width:'100%',height:'100%'}}>
         <nav className="navbar navbar-expand-xl navbar-dark fixed-top" style={{ backgroundColor: 'rgb(40,40,40)' }}>
 
           <div className="navbar-collapse" id="navbarNavAltMarkup">
