@@ -66,25 +66,26 @@ export default class GAME3 extends Component {
                 <div style={{marginRight:"20px"}}>
                     Order the numbers from 1 to 15 such that sum of any to adjacent number leads to a perfect square. Note that each number has to be used and only once.
             </div>
+            <br></br>
             <div style={{color:"white"}}>
                 {
                     this.state.availableArray.map((e)=>{
                         if(this.state.currentArray.indexOf(e)!=-1)
-                        return <button className='comp-3-btn'>{e}</button>;
-                        else return <button className='comp-3-btn' style={{backgroundColor:"black",color:"white"}} onClick={()=>{this.pushElementToCurrentArray(e)}}>{e}</button>;
+                        return <button className='c-btn'>{e}</button>;
+                        else return <button className='c-btn' style={{backgroundColor:"black",color:"white"}} onClick={()=>{this.pushElementToCurrentArray(e)}}>{e}</button>;
                     })
                     
                 }
             </div>
-            <div style={{height:"50px",borderRadius:"10px",backgroundColor:"white",boxShadow:"0 0 4px black",marginTop:"10px"}}>
+            <div style={{minHeight:"100px",borderRadius:"10px",backgroundColor:"white",boxShadow:"0 0 4px black",marginTop:"10px"}}>
                 {
                     this.state.currentArray.map((e,index)=>{
                         let temp = this.state.currentArray;
                         let colr;
                         if((index>0 && this.NotisSq(temp[index]+temp[index-1])) || (index<temp.length-1 && this.NotisSq(temp[index]+temp[index+1]) ))
-                        return  <button style={{backgroundColor:"red",color:"white"}} className='comp-3-btn' onClick={()=>{this.removeElementFromCurrentArray(index)}}>{e}</button>;
+                        return  <button style={{backgroundColor:"red",color:"white"}} className='c-btn' onClick={()=>{this.removeElementFromCurrentArray(index)}}>{e}</button>;
                         else 
-                        return  <button style={{backgroundColor:"rgb(105, 231, 105)",color:"white"}} className='comp-3-btn' onClick={()=>{this.removeElementFromCurrentArray(index)}}>{e}</button>;
+                        return  <button style={{backgroundColor:"rgb(105, 231, 105)",color:"white"}} className='c-btn' onClick={()=>{this.removeElementFromCurrentArray(index)}}>{e}</button>;
 
                     })
                 }

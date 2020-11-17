@@ -53,7 +53,7 @@ export default class PLAY extends Component {
             <div className="card-body">
               <h5 className="card-title">27 Cards</h5>
               <p className="card-text">Choose the decks your card is in, while we guess your card!</p>
-              <button className="btn btn-primary" onClick={this.Game4}>Play</button>
+              <button className="btn btn-outline-danger" onClick={this.Game4}>Play</button>
             </div>
           </div>
           <div className="card play-card" style={{ width: "18rem" }}>
@@ -61,15 +61,15 @@ export default class PLAY extends Component {
             <div className="card-body">
               <h5 className="card-title">Chinese Remainder</h5>
               <p className="card-text">Rotate either of the decks fixed number of times and let the magic unfold!!</p>
-              <button className="btn btn-primary" onClick={this.Game1}>Play</button>
+              <button className="btn btn-outline-danger" onClick={this.Game1}>Play</button>
             </div>
           </div>
           <div className="card play-card" style={{ width: "18rem" }}>
             <img className="card-img-top" src={require('../assets/king-queen.jpg')} alt="Zero-One" />
-            <div className="card-body">
+            <div className="card-body" >
               <h5 className="card-title">King-Queen</h5>
               <p className="card-text">Remove king-queen pairs one by one to see who wins!!! </p>
-              <button className="btn btn-primary" onClick={this.Game2}>Play</button>
+              <button className="btn btn-outline-danger" onClick={this.Game2}>Play</button>
             </div>
           </div>
           <div className="card play-card" style={{ width: "18rem" }}>
@@ -77,7 +77,7 @@ export default class PLAY extends Component {
             <div className="card-body">
               <h5 className="card-title">Square Sum</h5>
               <p className="card-text">Arrange the numbers such that any adjacent numbers' sum is a perfect square!! </p>
-              <button className="btn btn-primary" onClick={this.Game3}>Play</button>
+              <button className="btn btn-outline-danger" onClick={this.Game3}>Play</button>
             </div>
           </div>
           <div className="card play-card" style={{ width: "18rem" }}>
@@ -86,7 +86,7 @@ export default class PLAY extends Component {
               <h5 className="card-title">Kruskal</h5>
               <p className="card-text">!!! SPOILER ALERT !!! </p>
               <p className="card-text">You will be mind blown!!! </p>
-              <button className="btn btn-primary" onClick={this.Game5}>Play</button>
+              <button className="btn btn-outline-danger" onClick={this.Game5}>Play</button>
             </div>
           </div>
         </div>

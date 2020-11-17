@@ -98,7 +98,7 @@ export default class GAME4 extends Component {
         console.log(d3);
     }
     helper=(e)=>{
-        if(e-1<this.state.stage) return 'green';
+        if(e-1<this.state.stage) return 'rgb(138, 241, 138)';
         else return 'grey';
     }
     render() {
@@ -107,8 +107,9 @@ export default class GAME4 extends Component {
 
 
                 <h1>
-                    27 Card Trick
+                   <strong> 27 Card Trick</strong>
             </h1>
+            <br></br>
                 <div style={{ position: 'relative', height: '30px', width: '100%', }}>
                 <div style={{marginTop:'10px',width:'100%',backgroundColor:'rgb(206, 206, 206)', height:'10px', position:'absolute'}}></div>
                     <div className={
@@ -131,14 +132,16 @@ export default class GAME4 extends Component {
                   
 
                 </div>
-                <div style={{height:'50px'}}></div>
+                <div style={{height:'60px'}}></div>
 
                 {
                     (() => {
 
                         if (this.state.stage == 1) {
                             return <div>
+                                <br></br>
                                 <div>Keep in memory, a card from the deck given below.</div>
+                                <br></br>
                                 <button onClick={() => { this.setState({ stage: 2 }) }} style={{
                                     border: 'none',
                                     backgroundColor: 'white',

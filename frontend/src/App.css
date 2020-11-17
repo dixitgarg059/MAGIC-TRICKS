@@ -77,24 +77,42 @@
 .comp-2-btn:hover{
   box-shadow: 0px 0px 4px black;
 }
+.play-btn:hover{
+  box-shadow: 0px 0px 4px black;
+
+}
 .logic-btn{
-  color:white;
-  background-color:black;
+  color:black;
+  background-color:rgb(131, 248, 199);
   border: none;
-  border-radius:6px;
+  border-radius:3px;
   padding: 7px;
 }
 .logic-btn:hover{
   box-shadow: 0 0 10px black;
+  background-color: rgb(154, 250, 218);
 }
 .comp-3-btn{
   border:none;
   border-radius:10px;
-  padding: 10px;
+  color: black;
+  padding: 8px;
   margin: 3px;
+}
+.c-btn{
+  border:none;
+  border-radius:10px;
+  padding: 40px;
+  margin: 3px;
+
+}
+.c-btn:hover{
+  box-shadow: 0 0 10px black;
+  /* background-color: yellow; */
 }
 .comp-3-btn:hover{
   box-shadow: 0 0 10px black;
+  /* background-color: yellow; */
 }
 .comp-3-reset{
   border:none;
@@ -125,9 +143,14 @@
 }
 .play-card{
   margin:20px;
+  color: black;
+  background-color: rgb(32, 32, 32);
   /* border: none; */
   /* background-color: none; */
 
+}
+.play-card>*{
+  color: black;
 }
 .play-card:hover{
   box-shadow: 0 0 20px black;
@@ -148,16 +171,17 @@
   padding: 50px;
   margin: 3px;
   background-color: rgb(238, 237, 237);
+  color: black;
 }
 .comp-4-btn:hover{
-  box-shadow: 0 0 10px black;
+  box-shadow: 0 0 10px white;
   background-color: yellow;
   /* height: 100px; */
 }
 .progressbar1{
   height:10px;
   width: 20%;
-  background-color:rgb(59, 168, 59);
+  background-color:rgb(138, 241, 138);
   position: absolute;
   animation-name: move1;
   animation-duration: 2s;
@@ -172,7 +196,7 @@
 .progressbar2{
   height:10px;
   width: 40%;
-  background-color:rgb(59, 168, 59);
+  background-color:rgb(138, 241, 138);
   position: absolute;
   animation-name: move2;
   animation-duration: 2s;
@@ -187,7 +211,7 @@
 .progressbar3{
   height:10px;
   width: 60%;
-  background-color:rgb(59, 168, 59);
+  background-color:rgb(138, 241, 138);
   position: absolute;
   animation-name: move3;
   animation-duration: 2s;
@@ -202,7 +226,7 @@
 .progressbar4{
   height:10px;
   width: 80%;
-  background-color:rgb(59, 168, 59);
+  background-color:rgb(138, 241, 138);
   animation-name: move4;
   position: absolute;
   animation-duration: 2s;
@@ -217,7 +241,7 @@
 .progressbar5{
   height:10px;
   width: 100%;
-  background-color: rgb(59, 168, 59);
+  background-color: rgb(138, 241, 138);
   animation-name: move5;
   position: absolute;
   animation-duration: 2s;
@@ -234,6 +258,13 @@
   width:30px;
   border-radius:50%;
   position: absolute;
-  font-size:10px;
+  font-size:13px;
   padding-top:30px;
+}
+.home-back{
+  background-image: url('./assets/home.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height:100%;
+  width:100%;
 }
