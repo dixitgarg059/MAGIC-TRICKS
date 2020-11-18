@@ -140,7 +140,7 @@ export default class GAME4 extends Component {
                         if (this.state.stage == 1) {
                             return <div>
                                 <br></br>
-                                <div>Keep in memory, a card from the deck given below.</div>
+                                <div class="text-logic">Keep in memory, a card from the deck given below.</div>
                                 <br></br>
                                 <button onClick={() => { this.setState({ stage: 2 }) }} style={{
                                     border: 'none',
@@ -150,7 +150,7 @@ export default class GAME4 extends Component {
                                     Next
                                 </button>
                                 <div style={{ left: '400px', display: 'flex', position: 'static', alignItems: 'center' }}>
-                                    <div style={{ width: '100px', height: '100px', left: '300px', position: 'relative' }}
+                                    <div style={{ width: '100px', height: '100px', left: '400px', position: 'relative' }}
                                     ><HAND hand={deck} width={150} margin={100} focused={-1} />
                                     </div>
                                 </div>
@@ -159,7 +159,7 @@ export default class GAME4 extends Component {
                         if (this.state.stage == 2) {
                             return <div>
                                 <br></br>
-                                <div>Click on your favorite number</div>
+                                <div class="text-logic">Click on your favorite number</div>
                                 <br></br>
                                 <div style={{ top: '10px', position: 'relative', alignItems: 'center' }}>
                                     {Array.from({ length: 27 }, (_, i) => i + 1).map((e) => {
@@ -181,7 +181,7 @@ export default class GAME4 extends Component {
                         if (this.state.stage == 3 || this.state.stage == 4 || this.state.stage == 5) {
                             return <div>
                                 <br></br>
-                                <div>Choose the deck your card is present in.</div>
+                                <div class="text-logic">Choose the deck your card is present in.</div>
                                 <br></br>
                                 <div style={{
                                     fontSize: '30px',
@@ -227,11 +227,11 @@ export default class GAME4 extends Component {
                                 }}>
                                     <HAND hand={deck} width={150} margin={100} focused={this.state.favNum} />
                                 </div>
-                                <div style={{
-                                    // fontFamily: 'Alegreya Sans SC',
-                                    fontSize: '20px'
-                                }}>
-                                    Your card is: <img src={require(`../card_pics/${deck[this.state.favNum - 1]}.png`)} width="100px"></img><br></br>
+                                <span style={{paddingLeft: "10em"}}></span>
+                                <br/>
+                                <div class="text-logic">
+                                    <br/> <br/> <br/>
+                                    Your card is: <br/> <img src={require(`../card_pics/${deck[this.state.favNum - 1]}.png`)} width="100px"></img><br></br><br/>
                                     At the position {this.state.favNum} (Your Number) in the deck<br></br>
                                     <br></br>
                                     <button className='btn btn-outline-danger' onClick={

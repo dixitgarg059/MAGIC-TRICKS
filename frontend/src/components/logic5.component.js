@@ -6,8 +6,8 @@ export default class LOGIC5 extends Component {
   render() {
     return (
     <MathJax.Context input='ascii'>
-      <div>
-          <h1><strong>The Trick</strong></h1>
+      <div class="text-logic" > 
+          <h1 class="logic-h1"><strong>The Trick</strong></h1>
           <p>
           A User is invited to pick a card from 1st row of a well shuffled deck of cards.
           The magician explains that the card in the position of the user’s secret number becomes the user’s
@@ -16,7 +16,7 @@ export default class LOGIC5 extends Component {
           Yet, despite this seemingly random path through a shuffled pack of cards, the magician is able to predict
           the user’s last chosen card.
           </p>
-          <h1><strong>The Secret</strong></h1>
+          <h1 class="logic-h1"><strong>The Secret</strong></h1>
           <p>
           How is this done? Well, unknown to the user, the magician also picks an initial number between 1 and
           10, and proceeds to go through the same proces. And
@@ -38,11 +38,11 @@ export default class LOGIC5 extends Component {
           then the probability of success may be approximated with the simple formula
           </p>
             <div> <center>
-                <MathJax.Node>
+                <MathJax.Node >
                   P("success") = 1 - ((x^2 - 1)/(x^2))^N
                 </MathJax.Node>
             </center> </div>
-          <h1><strong>The Probability of Success</strong></h1>
+          <h1 class="logic-h1"><strong>The Probability of Success</strong></h1>
           <p>
           Calculating the probabilty of success is not an easy thing to do. So we will simplify the problem in a number
           of ways.
@@ -81,8 +81,8 @@ export default class LOGIC5 extends Component {
                 </MathJax.Node>
           </center> </div>
           <p>
-          Kruskal’s Count fails if the coupling time is greater than the number of cards. That means the proba-
-          bility of failure is P[t > N ], and;
+          Kruskal’s Count fails if the coupling time is greater than the number of cards. That means the probability
+           of failure is P[t > N ], and;
           </p>
           <div style={{paddingLeft: "20em"}}>
                 <MathJax.Node>
@@ -128,7 +128,7 @@ export default class LOGIC5 extends Component {
           Which means, if you perform this trick to an audience, every single person in that audience will land on the
           same card!
           </p>
-          <h2><strong>Expected Coupling Time</strong></h2>
+          <h1 class="logic-h1"><strong>Expected Coupling Time</strong></h1>
           <p>
             We may also calculated the expected coupling time; that is to say, the expected value of t. Under the 
             assumptions of a geometric distribution we showed that <MathJax.Node inline>{`P[t>N] = ((x^2-1)/x^2)^N`}</MathJax.Node>.
@@ -177,7 +177,7 @@ export default class LOGIC5 extends Component {
             These calculations show that the coupling time t is also a geometric distribution with <MathJax.Node inline>{`p = (x^2-1)/x^2 " and expectation " x^2`}</MathJax.Node>.
             So in Kruskal’s Count, with x = 70/13, we see that the expected coupling time E[t] ≈ 29. 
           </p>
-          <h2><strong>How Many Final Cards</strong></h2>
+          <h1 class="logic-h1"><strong>How Many Final Cards</strong></h1>
           <p>
           If we placed a counter on each of the ten initial starting positions, then followed Kruskal’s counting procedure
           for each counter, how many final positions would we end up with? As we have seen by simulation, 58.39% of
@@ -187,7 +187,7 @@ export default class LOGIC5 extends Component {
           </p>
           <center><img src={require('../assets/charts/chart2.png')} alt="chart-2" height="300px" width="600px"/></center> <br/>
           <center style={{fontSize: "15px"}}>As you can see by this simulation, 5 are more final cards becomes extremely rare. </center> <br/>
-          <h2><strong>The Final Card Placement</strong></h2>
+          <h1 class="logic-h1"><strong>The Final Card Placement</strong></h1>
           <p>
           Clearly, the final chosen card will be one of the last ten cards. By simulation, the proportion of trials finishing
           in each position were found to be;
@@ -279,7 +279,7 @@ export default class LOGIC5 extends Component {
                 </MathJax.Node> <br/>
           </div>
           as expected <br /> <br/>
-          <h2><strong>Some Variations</strong></h2>
+          <h1 class="logic-h1"><strong>Some Variations</strong></h1>
           <p>
           Our formula for approximating the probability of success of Kruskal’s Count was reasonably accurate, being
           within 1.06% of simulation. So let’s consider some variations of the main trick.
@@ -329,8 +329,7 @@ export default class LOGIC5 extends Component {
           Factorization Method and ‘Kangaroo’ (or ‘lambda’) method for solving the Discrete Logarithm problem:
           given the generator g of a cyclic group G, and an element h ∈ G, find x such that g x = h. Here x is a secret
           message and h is the encrypted message. The essential idea being; if we know the total of the jumps
-          made by each participant, we can deduce the other participant’s starting point. An online demonstration of
-          this method can be found at.
+          made by each participant, we can deduce the other participant’s starting point.
           </p>
           <br/><br/>
         </div>

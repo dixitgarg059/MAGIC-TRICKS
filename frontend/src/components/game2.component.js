@@ -203,12 +203,14 @@ export default class Products extends Component {
                     <br></br>
                     <h1><strong> King-Queen Game</strong></h1>
                     <br></br>
+                    <p>
                     Alica and Bob are playing a game <br></br>
                     There are some kings and queens in the order given below. <br></br>
                     Alice and Bob make alternating moves: Alice makes the first move, Bob makes the second move,
                     Alice makes the third one, and so on. During each move, the current player must choose an adjacent pair of king and queen and marry them off.
                 <br></br>
                     If a player can't make any move, they lose. Both players play optimally.
+                    </p>
     
             </div>
 

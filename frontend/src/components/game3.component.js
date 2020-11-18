@@ -70,14 +70,12 @@ export default class GAME3 extends Component {
             <div>
                 <Alert stack={{limit: 10, spacing: 50}} />
                 <br></br>
+                <button className='btn  btn-outline-danger' type="button" onClick={this.Show_logic} style={{ float: 'right' }} > Show Logic </button>
                 <h1>
                    <strong> Square Sum</strong>
             </h1>
 <br></br>
-                <div>
-                    <button className='btn  btn-outline-danger' type="button" onClick={this.Show_logic} style={{ float: 'right' }} > Show Logic </button>
-                </div>
-                <div style={{marginRight:"20px"}}>
+                <div style={{marginRight:"20px"}} class="text-logic">
                     Order the numbers from 1 to 15 such that sum of any two adjacent numbers leads to a perfect square. Note that each number has to be used.
             </div>
             <br></br>

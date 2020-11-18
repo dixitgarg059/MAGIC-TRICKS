@@ -280,3 +280,15 @@
   /* width:2000px; */
   /* background-color: white; */
 }
+
+.logic-h1 {
+  font-size: 3rem;
+  font-family: 'Bebas Neue',cursive;
+  color: #fff;
+}
+
+.text-logic, p {
+  font-size: 1.2rem;
+  font-family: Lato,sans-serif;
+  color: #afadab;
+}

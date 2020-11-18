@@ -55,7 +55,7 @@ export default class GAME5 extends Component {
                         if (this.state.stage == 1) {
                             return (<div>
                                 <br></br>
-                                <div>Click the number of rows and columns in the chess board</div>
+                                <div class="text-logic">Click the number of rows and columns in the chess board</div>
                                 <br></br>
                                 <div style={{ top: '10px', position: 'relative', alignItems: 'center' }}>
                                     {Array.from({ length: 8 }, (_, i) => i + 1).map((e) => {

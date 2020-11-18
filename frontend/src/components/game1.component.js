@@ -113,11 +113,12 @@ export default class Products extends Component {
                 <Alert stack={{limit: 10, spacing: 50}} />
 
                 <br></br>
+                <button className='btn btn-outline-danger' type="button" onClick={this.Show_logic} style={{ float: 'right' }} > Show Logic </button>
                 <h1><strong>Chinese Remainder</strong></h1>
                 <br></br>
-                <div style={{}}>Rotate either of the decks using the left arrows in any order until the letters of the word {this.state.str} are all used up and let the magic unfold.</div>
+
+                <div class="text-logic" >Rotate either of the decks using the left arrows in any order until the letters of the word {this.state.str} are all used up and let the magic unfold.</div>
 <br></br>
-                <button className='btn btn-outline-danger' type="button" onClick={this.Show_logic} style={{ float: 'right' }} > Show Logic </button>
                 <div>
                     <br></br>
                     <div className='comp-2-set'>

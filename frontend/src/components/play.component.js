@@ -58,6 +58,8 @@ export default class PLAY extends Component {
             <div className="card-body">
               <h5 className="card-title">27 Cards</h5>
               <p className="card-text">Choose the decks your card is in, while we guess your card!</p> 
+            </div>
+            <div className="card-footer">
               <button className="btn btn-outline-danger" onClick={this.Game4}>Play</button>
             </div>
           </div>
@@ -66,6 +68,8 @@ export default class PLAY extends Component {
             <div className="card-body">
               <h5 className="card-title">Chinese Remainder</h5>
               <p className="card-text">Rotate either of the decks fixed number of times and let the magic unfold!!</p>
+            </div>
+            <div className="card-footer">
               <button className="btn btn-outline-danger" onClick={this.Game1}>Play</button>
             </div>
           </div>
@@ -74,6 +78,8 @@ export default class PLAY extends Component {
             <div className="card-body" >
               <h5 className="card-title">King-Queen</h5>
               <p className="card-text">Remove king-queen pairs one by one to see who wins!!! </p>
+            </div>
+            <div className="card-footer">
               <button className="btn btn-outline-danger" onClick={this.Game2}>Play</button>
             </div>
           </div>
@@ -82,6 +88,8 @@ export default class PLAY extends Component {
             <div className="card-body">
               <h5 className="card-title">Square Sum</h5>
               <p className="card-text">Arrange the numbers such that any adjacent numbers' sum is a perfect square!! </p>
+            </div>
+            <div className="card-footer">
               <button className="btn btn-outline-danger" onClick={this.Game3}>Play</button>
             </div>
           </div>
@@ -91,6 +99,8 @@ export default class PLAY extends Component {
               <h5 className="card-title">Kruskal</h5>
               <p className="card-text">!!! SPOILER ALERT !!! </p>
               <p className="card-text">You will be mind blown!!! </p>
+            </div>
+            <div className="card-footer">
               <button className="btn btn-outline-danger" onClick={this.Game5}>Play</button>
             </div>
           </div>
@@ -100,6 +110,8 @@ export default class PLAY extends Component {
               <h5 className="card-title">Knight vs Knight</h5>
               <p className="card-text">Place the knights one by one to see who gets in limbo!!! </p>
               <p className="card-text"></p>
+            </div>
+            <div className="card-footer">
               <button className="btn btn-outline-danger" onClick={this.Game6}>Play</button>
             </div>
           </div>
