@@ -11,7 +11,7 @@ export default class Products extends Component {
         this.state = {
             cards1: ['1', '0', '0', '1', '1', '0', '1', '1', '0'],
             selected_indices: [],
-            Player: "Alice",
+            Player: "Player1",
             // cards2:"",
             total_count: 0,
             limit: 11
@@ -94,7 +94,7 @@ export default class Products extends Component {
         if (!window.confirm("UNLOCK LOGIC ?"))
             return
         this.props.history.push({
-            pathname: '/Play/Game1/Logic'
+            pathname: '/Play/Game2/Logic'
         });
     }
     Erase = () => {
@@ -145,11 +145,11 @@ export default class Products extends Component {
 
         this.setState({ cards1: cards2 });
         lt = new Array(11).fill(false);
-        if (this.state.Player == "Alice") {
-            this.setState({ Player: "Bob" });
+        if (this.state.Player == "Player1") {
+            this.setState({ Player: "Player2" });
         }
         else
-            this.setState({ Player: "Alice" });
+            this.setState({ Player: "Player1" });
         var possible = false;
         for (var i = 0; i < cards2.length - 1; i++) {
             if (cards2[i] != cards2[i + 1]) {
@@ -164,15 +164,15 @@ export default class Products extends Component {
     }
     Loose = () => {
 
-        if (this.state.Player == "Alice")
-        Alert.success("Bob Wins",
+        if (this.state.Player == "Player1")
+        Alert.success("Player2 Wins",
         {
             beep: true,
             offset:'100',
             timeout:1000
         });
         else
-            Alert.success("Alice Wins",
+            Alert.success("Player1 Wins",
             {
                 beep: true,
                 offset:'100',
@@ -204,10 +204,10 @@ export default class Products extends Component {
                     <h1><strong> King-Queen Game</strong></h1>
                     <br></br>
                     <p>
-                    Alica and Bob are playing a game <br></br>
+                    Player1 and Player2 are playing a game <br></br>
                     There are some kings and queens in the order given below. <br></br>
-                    Alice and Bob make alternating moves: Alice makes the first move, Bob makes the second move,
-                    Alice makes the third one, and so on. During each move, the current player must choose an adjacent pair of king and queen and marry them off.
+                    Player1 and Player2 make alternating moves: Player1 makes the first move, Player2 makes the second move,
+                    Player1 makes the third one, and so on. During each move, the current player must choose an adjacent pair of king and queen and marry them off.
                 <br></br>
                     If a player can't make any move, they lose. Both players play optimally.
                     </p>
@@ -223,7 +223,7 @@ export default class Products extends Component {
                 }>
                     {
                         (() => {
-                            if (this.state.Player === "Bob")
+                            if (this.state.Player === "Player2")
                                 return <img src={require('../assets/man.png')} width='40px'></img>
                             else return <img src={require('../assets/woman.png')} width='40px'></img>
 
