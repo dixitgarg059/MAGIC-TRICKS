@@ -32,7 +32,12 @@ export default class GAME5 extends Component {
 
 
     }
-
+    Show_logic = () => {
+        if (!window.confirm("UNLOCK LOGIC ?")) return;
+        this.props.history.push({
+          pathname: "/Play/Game6/Logic",
+        });
+      };
     checkAv =tmp=>{
         for(let p = 0; p < this.state.number;p++){
             for(let q = 0; q< this.state.number;q++){
@@ -46,8 +51,18 @@ export default class GAME5 extends Component {
 
         return (
             <div>
+          
                 <Alert stack={{ limit: 10, spacing: 50 }} />
                 <br></br>
+                <button
+            type="button"
+            onClick={this.Show_logic}
+            style={{ float: "right" }}
+            className="btn btn-outline-danger"
+          >
+            {" "}
+            Show Logic{" "}
+          </button>
                 <h1><strong>Knight vs Knight</strong></h1>
                 <br></br>{
                     (() => {
