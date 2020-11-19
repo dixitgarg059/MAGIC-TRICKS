@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, PureComponent} from 'react';
 import axios from 'axios';
 import Alert from 'react-s-alert';
 
@@ -6,7 +6,7 @@ var pictures = [];
 for(let i=1;i<=52;i++){
   pictures.push(i);
 }
-var first=-1;
+var first=-1,trapid=-1;
 var steps = [];
 var value=0;
 
@@ -19,6 +19,17 @@ function Square(props){
 //   console.log(props.class);
   return(
     <img className={props.class} src={require(`../card_pics/${myimg}`)} onClick={props.onClick}/>
+  )
+}
+function Trap(props){
+  // var myimg =props.id+'.png';
+  console.log(`trap caught`);
+  return(
+      <img className={props.class} src={require(`../card_pics/trap.jpg`)}/>,
+    <div>
+      <Alert stack={{ limit: 10, spacing: 50 }} />
+    </div>,
+        Alert.error("Trap caught", {offset:100})
   )
 }
 
@@ -40,6 +51,7 @@ class Board extends React.Component {
         continue;
       }
       this.id = 0;
+    //   this.props.trapset();
   }
   handleClick(i) { 
     // console.log(i);
@@ -57,18 +69,22 @@ class Board extends React.Component {
     })
   }
   trapsarenotgay(id){
+      // this.arr[id].class="traps";
+      trapid=id;
     console.log(id);
   }
   nextstep(i) {
+    this.props.value="CHnage";
     let loop=i%13,next=0;
     console.log(i);
     console.log(steps[i]);
     loop = steps[i];
-      console.log(loop); // pic num
+      // console.log(loop); // pic num
       next=this.arr.indexOf(i);
-      console.log(next); // index in array
+      // console.log(next); // index in array
       if((next+loop)>=52){
         Alert.success("Walk complete", {offset:100});
+        Alert.error("Trap avoided", {offset:100});
         console.log("DONE");
         // if(trapid == i)
         // console.log("TRAPPED");
@@ -82,40 +98,83 @@ trapset(){
     let pick = Math.floor(Math.random()*7);
     console.log(pick);
     let nt=0;
-    // while(pick<=52){
-    //     console.log(`pick:`,pick);
-    //     nt = steps[this.arr.indexOf(pick)];
-    //     console.log(`nt:`,nt);
-    //     let lp = this.arr[nt+pick];
-    //     console.log(`lp:`,lp);
-    //     pick = lp;
-    // }
-    console.log(pick);
+    while(1){
+        let val = this.arr[pick];//pic num
+        // console.log(val);
+        nt = steps[val];//steps
+        // console.log(`nt:`,nt);
+        if((nt+pick)>52){
+            break;
+        }
+        let lp = this.arr[nt+pick];
+        pick = pick+nt;
+    }
     this.trapsarenotgay(pick);
 }
   renderSquare(i) {
     // console.log(this);
     // console.log(this.state.selarr);
+    console.log(`render called:`,{i});
     if(first==-1){
-      if(this.state.selarr.indexOf(i)==-1)
+      if(this.arr.indexOf(i)<7){
+        return(
+          <Square class={"mycard"} id={i} onClick={()=>this.handleClick(i)}/>
+        )
+      } else{
         return (
-        <Square class={"mycard"} id={i} onClick={()=>this.handleClick(i)}/>
-        );
-      else
-      return (
-        <Square class={"mycard-bold"} id={i} onClick={()=>this.handleClick(i)}/>
-        );
+          <Square class={"mycard"} id={i}/>
+        )
+      }
+    } else {
+      console.log(`first:`,first);
+      if(this.state.selarr.indexOf(i)==-1){
+          return (
+          <Square class={"mycard"} id={i}/>
+          );
+        } else{
+          if(this.arr.indexOf(i)==trapid){
+            return (
+              <Trap class={"trap"}/>
+              );
+          } else {
+            return (
+              <Square class={"mycard-bold"} id={i}/>
+              );
+          }
+        }
     }
-    else{
-      if(this.state.selarr.indexOf(i)==-1)
-      return (
-      <Square class={"mycard"} id={i}/>
-      );
-    else
-    return (
-      <Square class={"mycard-bold"} id={i}/>
-      );
-    }
+    //   if(this.state.selarr.indexOf(i)==-1){
+    //     if(this.arr.indexOf(i)<7){
+    //       return (
+    //       <Square class={"mycard"} id={i} onClick={()=>this.handleClick(i)}/>
+    //       );
+    //     } else{
+    //       return (
+    //         <Square class={"mycard"} id={i}/>
+    //         );
+    //     }
+    //   } else{
+    //     return (
+    //       <Square class={"mycard-bold"} id={i} onClick={()=>this.handleClick(i)}/>
+    //       );
+    //   }
+    // } else{
+    //   if(this.state.selarr.indexOf(i)==-1){
+    //     return (
+    //     <Square class={"mycard"} id={i}/>
+    //     );
+    //   } else{
+    //     if(this.arr.indexOf(i)==trapid){
+    //       return (
+    //         <Trap class={"trap"}/>
+    //         );
+    //     } else{
+    //       return (
+    //         <Square class={"mycard-bold"} id={i}/>
+    //         );
+    //     }
+    //   }
+    // }
 }
   
   render() {
@@ -124,8 +183,12 @@ trapset(){
           <div>
           <Alert stack={{ limit: 10, spacing: 50 }} />
         <div>
-        <button className="btn btn-info" onClick={()=>this.nextstep(first)}>Find the next step</button>
+        <button className="btn btn-outline-primary sticky" value="Find next" onClick={()=>this.nextstep(first)}></button>
         </div>
+        {this.arr.map((value,index)=>{
+          console.log(index);
+          {this.renderSquare(value)}
+        })}
           <div className="myboard-row ">
           {this.renderSquare(this.arr[0])}
           {this.renderSquare(this.arr[1])}
@@ -195,7 +258,7 @@ trapset(){
           {this.renderSquare(this.arr[49])}
           {this.renderSquare(this.arr[50])}
           {this.renderSquare(this.arr[51])}
-          </div>
+          </div> 
       </div>
       );
   }
@@ -211,18 +274,18 @@ export default class GAME5 extends Component {
     }
 
     keys=(num)=> {
-        console.log(num);
+        // console.log(num);
         value=num;
-        console.log(value);
+        // console.log(value);
         for(let i=0;i<=52;i++){
           if((i%13)>=11 || i%13==0){
             steps.push(num);
-            console.log("being:",i,i%13,num);
+            // console.log("being:",i,i%13,num);
           }
           else{
             steps.push(i%13);
-            if(i==51)
-            console.log("eeee");
+            // if(i==51)
+            // console.log("eeee");
           }
         }  
         this.setState({
@@ -235,6 +298,12 @@ export default class GAME5 extends Component {
         this.props.history.push({
             pathname:'/Play/Game5/Logic'
         });
+    }
+    resetstate=()=>{
+      this.setState({
+        stage: 1,
+      })
+      window.location.reload(false);
     }
     render() {
         if(this.state.stage==1){
@@ -269,13 +338,15 @@ export default class GAME5 extends Component {
                 <div>
                   <button type="button" onClick={this.Show_logic} style={{ float: 'right' }} className='btn btn-outline-danger'> Show Logic </button>
                   <div className="game">
-                    <p class="heading">The Kruskal Count Card Trick</p>
-                    <p>
-                      The cards below were ordered by shuffling a deck of cards and then dealing them out.<br/>
-                      Click on any card in the first row. Whatever number is on this card move this many cards to the right and click the new card, treating Ace as a 1 and face cards as 5, and wrapping around to the left side of the next row. Repeat from the card just clicked. I magically know that you will (usually) end up on the 'trap' card, indicated by a thick border. The <a href="kruskal2.html">two deck version</a> is successful over 95% of the time. To reshuffle and play again hit the reload button on your browser.
+                    <p class="h2">The Kruskal Count Card Trick</p>
+                    <p class="h3">
+                     Choose your card from the first row of the deck
                     </p>
                     <br/>
                   </div>
+                  <button className="btn btn-outline-success" onClick={()=>this.resetstate()}>Play again</button>
+                  <br/>
+                  <br/>
                   <div>
                     <Board />
                   </div>
