@@ -28,7 +28,7 @@ function Square(props) {
 function Trap(props) {
   // var myimg =props.id+'.png';
   console.log(`trap caught`);
-  Alert.error("Caught in trap!", { offset: 100 });
+  Alert.error("Caught in trap!", { offset: 125 });
   return (
     <img
       className={props.class}
@@ -45,6 +45,7 @@ class Board extends React.Component {
       selarr: [],
       set: 0,
       avoid: -1,
+      fixed: 0,
     };
     this.arr = [];
     for (let i = 1; i <= 52; ) {
@@ -59,12 +60,27 @@ class Board extends React.Component {
   }
   handleClick(i) {
     // console.log(i);
-    if (first == -1) first = i;
-    // else
-    // return;
-    if (this.state.selarr.indexOf(i) == -1)
+    first = i;
+    if(this.state.fixed==0){
+      if (this.state.selarr.indexOf(i) == -1)
+        this.setState({
+          selarr: [i],
+          // selarr: [...this.state.selarr, i],
+          set: 1,
+        });
+      else
+        this.setState({
+          selarr: [
+            ...this.state.selarr.slice(0, this.state.selarr.indexOf(i)),
+            ...this.state.selarr.slice(this.state.selarr.indexOf(i) + 1),
+          ],
+          set: 1,
+        });
+    }else{
+      if (this.state.selarr.indexOf(i) == -1)
       this.setState({
         selarr: [...this.state.selarr, i],
+        set: 1,
       });
     else
       this.setState({
@@ -72,14 +88,22 @@ class Board extends React.Component {
           ...this.state.selarr.slice(0, this.state.selarr.indexOf(i)),
           ...this.state.selarr.slice(this.state.selarr.indexOf(i) + 1),
         ],
+        set: 1,
       });
+    }
   }
 
   nextstep(i) {
-    this.setState({
-      set: 1,
-    });
-    document.getElementById("mydiv").scrollTop += "40px";
+    if(this.state.set==0){
+        Alert.error("Please select card from first row", { offset: 125 });
+      return;
+    }
+    if(this.state.fixed==0){
+      this.setState({
+        fixed: 1,
+      });
+      return;
+    }
     let loop = i % 13,
       next = 0;
     console.log(i);
@@ -89,14 +113,25 @@ class Board extends React.Component {
     next = this.arr.indexOf(i);
     // console.log(next); // index in array
     if (next + loop >= 52) {
-      Alert.success("Walk complete", { offset: 100 });
-      if(next != this.props.trapid){
-        Alert.error("Trap avoided", { offset: 100 });
+      Alert.success("Walk complete", { offset: 125 });
+      if (next != this.props.trapid) {
+        Alert.error("Trap avoided", { offset: 125 });
       }
-      console.log("DONE");
       return;
     }
+    let currow = Math.floor(next / 7);
     loop = this.arr[next + loop];
+    let nextrow = Math.floor(this.arr.indexOf(loop) / 7);
+    console.log(`rows:`,currow,nextrow);
+    if((currow-nextrow)==2){
+      document.getElementById("devdiv").scrollTop += 125;
+    }
+    else if(currow<nextrow){
+      document.getElementById("devdiv").scrollTop += 100;
+    }
+    else if(currow==nextrow){
+      document.getElementById("devdiv").scrollTop += 50;
+    }
     this.handleClick(loop);
     first = loop;
   }
@@ -105,33 +140,36 @@ class Board extends React.Component {
     console.log(pick);
     let nt = 0;
     while (1) {
-      let val = this.arr[pick]; //pic num
+      let val = this.arr[pick]; //pic id
       nt = steps[val]; //steps
-      if (nt + pick > 52) {
+      if ((nt + pick) >= 52) {
         break;
       }
-      let lp = this.arr[nt + pick];
+      // console.log(nt,pick);
       pick = pick + nt;
     }
     this.props.func(pick);
   }
   renderSquare(i) {
-    console.log(`render called:`, { i });
-    if (first == -1) {
+    if (this.state.fixed == 0) {
       if (this.arr.indexOf(i) < 7) {
+        if (this.state.selarr.indexOf(i) == -1) {
         return (
           <Square class={"mycard"} id={i} onClick={() => this.handleClick(i)} />
         );
+        } else{
+          return (
+            <Square class={"mycard-bold"} id={i} onClick={() => this.handleClick(i)} />
+          );
+        }
       } else {
         return <Square class={"mycard"} id={i} />;
       }
     } else {
-      console.log(`first:`, first);
       if (this.state.selarr.indexOf(i) == -1) {
         return <Square class={"mycard"} id={i} />;
       } else {
         if (this.arr.indexOf(i) == this.props.trapid) {
-          
           return <Trap class={"trap"} id={i} />;
         } else {
           return <Square class={"mycard-bold"} id={i} />;
@@ -141,41 +179,81 @@ class Board extends React.Component {
   }
   componentDidMount() {
     this.trapset();
+    // $(document).on('click', function(event) {
+    //   $('html, body').animate({
+    //     scrollTop: $("devdiv").offset().top
+    //   }, 800,function(){
+    //     // window.location.hash = hash;
+    //   });
+    // });
   }
   render() {
-    return (
-      <div>
-        <Alert stack={{ limit: 10, spacing: 50 }} />
+    if (this.state.fixed == 0) {
+      return (
         <div>
-          <button
-            style={{ left: "45%", position: "relative" }}
-            className="btn btn-outline-primary"
-            onClick={() => this.nextstep(first)}
+          <p class="h3">Choose your card from the first row of the deck</p>
+          <Alert stack={{ limit: 10, spacing: 50 }} />
+          <div>
+            <button
+              style={{ left: "45%", position: "relative" }}
+              className="btn btn-primary"
+              onClick={() => this.nextstep(first)}
+            >
+              Confirm selection
+            </button>
+            <br />
+            <br />
+          </div>
+          <div
+            style={{
+              overflowY: "scroll",
+              height: "350px",
+              backgroundColor: "#252525",
+            }}
+            id="devdiv"
+            className="myboard-row"
           >
-            {this.state.set == 0
-              ? `Choose the first card`
-              : `Find the next card`}
-          </button>
-          <br />
-          <br />
+            <br />
+            <br />
+            {this.arr.map((value, index) => {
+              return this.renderSquare(value);
+            })}
+          </div>
         </div>
-        <div
-          style={{
-            overflow: "auto",
-            height: "350px",
-            backgroundColor: "#252525",
-          }}
-          id={"mydiv"}
-        >
-          <br />
-          <br />
-          {this.arr.map((value, index) => {
-            console.log(index);
-            return this.renderSquare(value);
-          })}
+      );
+    } else {
+      return (
+        <div>
+          <p class="h3">Walk your path by clicking the button:</p>
+          <Alert stack={{ limit: 10, spacing: 50 }} />
+          <div>
+            <button
+              style={{ left: "45%", position: "relative" }}
+              className="btn btn-outline-primary"
+              onClick={() => this.nextstep(first)}
+            >
+              Find the next card
+            </button>
+            <br />
+            <br />
+          </div>
+          <div
+            style={{
+              overflowY: "scroll",
+              height: "350px",
+              backgroundColor: "#252525",
+            }}
+            id={"devdiv"}
+          >
+            <br />
+            <br />
+            {this.arr.map((value, index) => {
+              return this.renderSquare(value);
+            })}
+          </div>
         </div>
-      </div>
-    );
+      );
+    }
   }
 }
 
@@ -282,7 +360,7 @@ export default class GAME5 extends Component {
               <br />
               <p>
                 The value of face cards will determine the accuracy of guessing
-                your card. (Lower => Better chance)
+                your card. (Lower = Better chance)
               </p>
             </div>
           </div>
@@ -302,10 +380,10 @@ export default class GAME5 extends Component {
           </button>
           <div className="game">
             <p class="h2">The Kruskal Count Card Trick</p>
-            <p class="h3">Choose your card from the first row of the deck</p>
             <br />
           </div>
           <button
+            style={{ float: "right" }}
             className="btn btn-outline-success"
             onClick={() => this.resetstate()}
           >
