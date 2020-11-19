@@ -42,7 +42,6 @@ export default class PLAY extends Component {
     return (
       <div>
 
-        {/* <h2> Here are the list of some awesome card games you'd enjoy !! </h2> */}
         {/* <div>
           <ol className="navbar-nav mr-auto">
             <li>Game1<button type="button" style={{ float: 'right' }} onClick={this.Game1}>Play</button></li>
@@ -54,17 +53,17 @@ export default class PLAY extends Component {
         </div> */}
         <div style={{ display: "flex", flexWrap: "wrap" }}>
           <div className="card play-card" style={{ width: "18rem" }}>
-            <img className="card-img-top" src={require('../assets/27cards.jpg')} alt="27 cards trick" />
+            <img className="card-img-top" src={require('../assets/27cards.jpg')} onClick={this.Game4} alt="27 cards trick" />
             <div className="card-body">
               <h5 className="card-title">27 Cards</h5>
-              <p className="card-text">Choose the decks your card is in, while we guess your card!</p> 
+              <p className="card-text">Keep track of your card in the deck while we try to guess it!</p> 
             </div>
             <div className="card-footer">
               <button className="btn btn-outline-danger" onClick={this.Game4}>Play</button>
             </div>
           </div>
           <div className="card play-card" style={{ width: "18rem" }}>
-            <img className="card-img-top" src={require('../assets/chinese.jpg')} alt="Chinese Remainder" />
+            <img className="card-img-top" src={require('../assets/chinese.jpg')} onClick={this.Game1} alt="Chinese Remainder" />
             <div className="card-body">
               <h5 className="card-title">Chinese Remainder</h5>
               <p className="card-text">Rotate either of the decks fixed number of times and let the magic unfold!!</p>
@@ -74,7 +73,7 @@ export default class PLAY extends Component {
             </div>
           </div>
           <div className="card play-card" style={{ width: "18rem" }}>
-            <img className="card-img-top" src={require('../assets/king-queen.jpg')} alt="Zero-One" />
+            <img className="card-img-top" src={require('../assets/king-queen.jpg')} onClick={this.Game2} alt="Zero-One" />
             <div className="card-body" >
               <h5 className="card-title">King-Queen</h5>
               <p className="card-text">Remove king-queen pairs one by one to see who wins!!! </p>
@@ -84,7 +83,7 @@ export default class PLAY extends Component {
             </div>
           </div>
           <div className="card play-card" style={{ width: "18rem" }}>
-            <img className="card-img-top" src={require('../assets/hamiltonian.jpg')} alt="Hamiltonian" />
+            <img className="card-img-top" src={require('../assets/hamiltonian.jpg')} onClick={this.Game3} alt="Hamiltonian" />
             <div className="card-body">
               <h5 className="card-title">Square Sum</h5>
               <p className="card-text">Arrange the numbers such that any adjacent numbers' sum is a perfect square!! </p>
@@ -94,21 +93,21 @@ export default class PLAY extends Component {
             </div>
           </div>
           <div className="card play-card" style={{ width: "18rem" }}>
-            <img className="card-img-top" src={require('../assets/kruskal.jpg')} alt="Kruskal" />
+            <img className="card-img-top" src={require('../assets/kruskal.jpg')} onClick={this.Game5} alt="Kruskal" />
             <div className="card-body">
-              <h5 className="card-title">Kruskal</h5>
-              <p className="card-text">!!! SPOILER ALERT !!! </p>
-              <p className="card-text">You will be mind blown!!! </p>
+              <h5 className="card-title">Kruskal Count Card</h5>
+              <p className="card-text">Walk your path and wait for the end!</p>
+              <p className="card-text">Your mind will be blown!!</p>
             </div>
             <div className="card-footer">
               <button className="btn btn-outline-danger" onClick={this.Game5}>Play</button>
             </div>
           </div>
           <div className="card play-card" style={{ width: "18rem" }}>
-            <img className="card-img-top" src={require('../assets/knight.jpg')} alt="Kruskal" />
+            <img className="card-img-top" src={require('../assets/knight.jpg')} onClick={this.Game6} alt="Kruskal" />
             <div className="card-body">
               <h5 className="card-title">Knight vs Knight</h5>
-              <p className="card-text">Place the knights one by one to see who gets in limbo!!! </p>
+              <p className="card-text">Place the knights one by one to see who gets in limbo!! </p>
               <p className="card-text"></p>
             </div>
             <div className="card-footer">

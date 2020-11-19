@@ -292,3 +292,99 @@
   font-family: Lato,sans-serif;
   color: #afadab;
 }
+/* -----------------
+      GAME 5 CSS:
+-------------------- */
+.mygame {
+  display: inline;
+}
+
+.mygame-info {
+  margin-left: 20px;
+}
+.myboard-row{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  transition-property: width;
+  transition-duration: 2s;
+}
+.myboard-row :hover{
+  /* background-color: aqua; */
+  /* border: 2px solid rgb(248, 244, 11); */
+  box-shadow: 3px 3px 5px  rgb(241, 206, 7);
+}
+.myboard-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.status {
+  margin-bottom: 10px;
+}
+.mycard {
+  /* border: 1px solid rgb(223, 202, 12); */
+  border-radius: 10px;
+  height: 125px;
+  margin-right: 25px;
+  margin-left: 35px;
+  margin-bottom: 15px;
+  width: 95px;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  padding: 0;
+  text-align: center;
+}
+.mycard-bold {
+  border: 5px solid rgb(255, 0, 0);
+  box-shadow: 3px 3px 5px rgb(81, 209, 21);
+  border-radius: 10px;
+  height: 125px;
+  margin-right: 25px;
+  margin-left: 35px;
+  margin-bottom: 15px;
+  width: 95px;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  padding: 0;
+  text-align: center;
+}
+/* .card :focus {
+  outline: none; */
+/* } */ */
+.mycard :hover {
+  background-color: aqua;
+  border: 10px solid #000;
+
+}
+.mysteps {
+  font: 15px "Arial";
+  text-align: center;
+  background-color: #87a3dd;
+  align-content: center;
+  border-radius: 10px;
+  position: sticky;
+}
+.mysteps :hover {
+  background-color: aqua;
+}
+.trap {
+  border: 7px solid rgb(76, 0, 255);
+  box-shadow: 3px 3px 5px rgb(255, 0, 0);
+  border-radius: 10px;
+  height: 125px;
+  margin-right: 25px;
+  margin-left: 35px;
+  margin-bottom: 15px;
+  width: 95px;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  padding: 0;
+  text-align: center;
+}
