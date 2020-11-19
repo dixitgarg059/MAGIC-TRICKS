@@ -5,6 +5,7 @@ import 'react-s-alert/dist/s-alert-css-effects/slide.css';
 import "bootstrap/dist/css/bootstrap.min.css"
 import PLAY from './components/play.component'
 import WELCOME from './components/welcome.component'
+import PURPOSE from './components/purpose.component'
 import GAME1 from './components/game1.component'
 import GAME2 from './components/game2.component'
 import GAME3 from './components/game3.component'
@@ -39,6 +40,9 @@ function App() {
               <Link to="/Play" className={`nav-item nav-link ${active==1?"active":''}`} onClick={()=>{
                 setActive(1);
               }}>Play</Link>
+              <Link to="/Purpose" className={`nav-item nav-link ${active==2?"active":''}`} onClick={()=>{
+                setActive(2);
+              }}>Purpose</Link>
               <a className="nav-item nav-link" href="#">About us</a>
             </div>
           </div>
@@ -47,6 +51,7 @@ function App() {
           <Route path="/" exact component={WELCOME} />
         <div className="container" style={{ paddingTop: '50px' }}>
           <Route path="/Play" exact component={PLAY} />
+          <Route path="/Purpose" exact component={PURPOSE} />
           <Route path="/Play/Game1" exact component={GAME1} />
           <Route path="/Play/Game2" exact component={GAME2} />
           <Route path="/Play/Game3" exact component={GAME3} />
