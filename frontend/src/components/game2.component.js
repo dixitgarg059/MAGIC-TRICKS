@@ -29,97 +29,8 @@ export default class Products extends Component {
         }
     }
     componentDidMount() {
-        // var lt=[]
-        // for(var i=0;i<10;i++)
-        // {
-        //     $("."+String(i)).on('click', function(event){
-        //         $(event.delegateTarget).css("background-color","blue")
-        //         lt[i]=true;
-        //     });
-
-        // }
         $(".play").show();
         $(".loose").hide();
-        // [0,1,2,3,4,5,6,7,8,9].map(
-        //     (e,index)=>{
-        //         $(`.${e}`).on('click', function (event) {
-        //             $(event.delegateTarget).css("background-color", "blue");
-        //             $(event.delegateTarget).css("box-shadow", "0 0 20px yellow");
-        //             lt[e] = true;
-        //             if(this.state.selected_indices.indexOf(e)==-1)
-        //             this.setState({
-        //                 selected_indices : [...this.selected_indices,e],
-        //             })
-
-        //         });
-
-        //     }
-        // )
-        // $(".0").on('click', function (event) {
-        //     $(event.delegateTarget).css("background-color", "blue");
-        //     $(event.delegateTarget).css("box-shadow", "0 0 20px yellow");
-        //     lt[0] = true;
-        //     if(this.state.selected_indices.indexOf(0)==-1)
-        //     this.setState({
-        //         selected_indices : [...this.selected_indices,0],
-        //     })
-
-        // });
-        // $(".1").on('click', function (event) {
-        //     $(event.delegateTarget).css("background-color", "blue")
-
-        //     $(event.delegateTarget).css("box-shadow", "0 0 20px yellow");
-        //     lt[1] = true;
-        // });
-        // $(".2").on('click', function (event) {
-        //     $(event.delegateTarget).css("background-color", "blue");
-
-        //     $(event.delegateTarget).css("box-shadow", "0 0 20px yellow");
-        //     lt[2] = true;
-        // });
-        // $(".3").on('click', function (event) {
-        //     $(event.delegateTarget).css("background-color", "blue");
-
-        //     $(event.delegateTarget).css("box-shadow", "0 0 20px yellow");
-        //     lt[3] = true;
-        // });
-        // $(".4").on('click', function (event) {
-        //     $(event.delegateTarget).css("background-color", "blue");
-
-        //     $(event.delegateTarget).css("box-shadow", "0 0 20px yellow");
-        //     lt[4] = true;
-        // });
-        // $(".5").on('click', function (event) {
-        //     $(event.delegateTarget).css("background-color", "blue");
-
-        //     $(event.delegateTarget).css("box-shadow", "0 0 20px yellow");
-        //     lt[5] = true;
-        // });
-        // $(".6").on('click', function (event) {
-        //     $(event.delegateTarget).css("background-color", "blue");
-
-        //     $(event.delegateTarget).css("box-shadow", "0 0 20px yellow");
-        //     lt[6] = true;
-        // });
-        // $(".7").on('click', function (event) {
-        //     $(event.delegateTarget).css("background-color", "blue");
-
-        //     $(event.delegateTarget).css("box-shadow", "0 0 20px yellow");
-        //     lt[7] = true;
-        // });
-        // $(".8").on('click', function (event) {
-        //     $(event.delegateTarget).css("background-color", "blue");
-
-        //     $(event.delegateTarget).css("box-shadow", "0 0 20px yellow");
-        //     lt[8] = true;
-        // });
-        // $(".9").on('click', function (event) {
-        //     $(event.delegateTarget).css("background-color", "blue");
-
-        //     $(event.delegateTarget).css("box-shadow", "0 0 20px yellow");
-        //     lt[9] = true;
-        // });
-
     }
     Show_logic = () => {
         if (!window.confirm("UNLOCK LOGIC ?"))
@@ -131,11 +42,7 @@ export default class Products extends Component {
     Erase = () => {
 
         var arr = this.state.selected_indices.slice()
-        // for (var i = 0; i < 10; i++) {
-        //     if (lt[i]) {
-        //         arr.push(i);
-        //     }
-        // }
+
         if (arr.length != 2 || (arr[0] != arr[1] - 1) || (this.state.cards1[arr[0]] == this.state.cards1[arr[1]])) {
             Alert.error("Invalid Move",
                 {
@@ -143,15 +50,18 @@ export default class Products extends Component {
                     offset: '100',
                     timeout: 1000
                 });
-            for (var i = 0; i < 10; i++) {
-                $("." + String(i)).css("background-color", "white")
-                $("." + String(i)).css("box-shadow", "none");
-                $("." + String(i)).css("transform", "none");
-                // $("." + String(i)).addClass("kingqueen-card");
+            // for (var i = 0; i < 10; i++) {
+            //     $("." + String(i)).css("background-color", "white")
+            //     $("." + String(i)).css("box-shadow", "none");
+            //     $("." + String(i)).css("transform", "none");
+            //     // $("." + String(i)).addClass("kingqueen-card");
 
-                lt = new Array(11).fill(false);
+            //     lt = new Array(11).fill(false);
 
-            }
+            // }
+            this.setState({
+                selected_indices: [],
+            })
 
             return;
         }
@@ -165,15 +75,6 @@ export default class Products extends Component {
         for (var i = 0; i < this.state.cards1.length; i++) {
             if (arr.indexOf(i) == -1)
                 cards2.push(this.state.cards1[i]);
-            else {
-
-                $("." + String(i)).css("background-color", "white")
-                $("." + String(i)).css("transform", "none");
-                $("." + String(i)).css("box-shadow", "none");
-                // $("." + String(i)).addClass("kingqueen-card");
-
-
-            }
         }
         console.log(arr);
         console.log(cards2);
@@ -267,7 +168,7 @@ export default class Products extends Component {
                     {this.state.Player}'s Turn
             </div>
                 <div className="container" style={{ 
-                    // display: "flex", flexWrap: "wrap"
+                    display: "flex", flexWrap: "wrap"
                      }}>
                     {this.state.cards1.map((char, index) => {
                         if (this.state.selected_indices.indexOf(index) != -1) {
