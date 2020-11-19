@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&display=swap');
 .App {
   text-align: center;
+  scroll-behavior: smooth;
 }
-
+html{
+  scroll-behavior: smooth;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -52,10 +55,10 @@
   width:100px;
   /* height: 100px; */
 }
-.comp-2-main{
+/* .comp-2-main{ */
   /* background-color: black; */
   /* height: 1600px; */
-}
+/* } */
 .comp-2-set{
   margin-top:10px;
   margin-bottom:10px;
@@ -379,6 +382,7 @@
 }
 .trap {
   border: 10px solid #fd0000;
+  background-color: rgb(247, 202, 202);
   height: 125px;
   margin-right: 25px;
   margin-left: 35px;
