@@ -48,8 +48,8 @@ function App() {
           </div>
         </nav>
           <br />
-          <Route path="/" exact component={WELCOME} />
         <div className="container" style={{ paddingTop: '50px' }}>
+          <Route path="/" exact component={WELCOME} />
           <Route path="/Play" exact component={PLAY} />
           <Route path="/Purpose" exact component={PURPOSE} />
           <Route path="/Play/Game1" exact component={GAME1} />
