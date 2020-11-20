@@ -177,9 +177,51 @@ export default class LOGIC1 extends Component {
 								<br /><center><img src={require(`../assets/crt_logic3.jpg`)} width="100%" /></center><br /><br />
 								<p>The inner loop runs for <i>k</i> times and the outer one runs till the answer is reached. And the answer
 								increases very rapidly with the increase in number of equations.<br />
-									<strong>Complexity:</strong> <i>O(mk)</i>, where <i>m = LCM(num[1]num[2]...num[k])</i><br />
+									<strong>Complexity:</strong> <i>O(mk)</i>, where <i>m = prod(num[1],num[2],...,num[k])</i><br />
 								</p>
 							</li>
+							<li><h4 class="logic-h4">Better method</h4>
+								<p>We can see that <i>x</i>(the solution) can be given as shown below. If we take the mod with any number now
+								we get the required remainder.</p>
+								<br /><center><img src={require(`../assets/crt_logic4.jpg`)} height="400px" width="600px" /></center><br /><br />
+								<p>The inner loop runs for <i>k</i> times and the outer one runs till the answer is reached. And the answer
+								increases very rapidly with the increase in number of equations.<br />
+									<strong>Complexity:</strong> <i>O(k log m)</i>, where <i>m = prod(num[1],num[2],...,num[k])</i><br />
+									<i>k</i> is the length of tha array (number of equations), and <i>log m</i> is the complexity of finding
+									the inverse of a number wrt <i>m</i>.
+								</p>
+								<p><strong>Finding inverse</strong><br />
+								This can be found out by the Extended Euclidean Method<br />
+								Extended Euclidean Algorithm finds integer coefficients x and y such that:
+									<center><div>
+										<MathJax.Node>
+											ax + by = gcd(a, b)
+									</MathJax.Node><br />
+									</div></center>
+								Using it for inverse: we have gcd(a,b) = 1 (co-prime)<br />
+									<center><div>
+										<MathJax.Node>
+											ax + by = 1
+									</MathJax.Node><br />
+									</div></center>
+									To find multiplicative inverse of ‘a’ under ‘m’, we put b = m in above formula.<br />
+									<center><div>
+										<MathJax.Node>
+											ax + my = 1
+									</MathJax.Node><br />
+									</div></center>
+									Take modulo with ‘m’, on both sides, we get:<br />
+									<center><div>
+										<MathJax.Node>
+											ax -= 1 mod m
+									</MathJax.Node><br />
+									</div></center>
+									Thus multiplicative inverse of <i>x</i> wrt <i>m</i> is <i>a</i> and vice versa.<br />
+								</p>
+							</li>
+							<br /><center><img src={require(`../assets/crt_logic5.jpg`)} height="400px" width="700px" /></center><br /><br />
+							<br /><center><img src={require(`../assets/crt_logic6.jpg`)} height="450px" width="700px" /></center><br /><br />
+
 						</ul>
 					</p>
 					<h3 class="logic-h3"><strong>Checking for <i>m = 4</i></strong></h3><br />
