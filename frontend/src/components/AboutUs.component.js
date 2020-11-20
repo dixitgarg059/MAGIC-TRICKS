@@ -39,7 +39,7 @@ export default class ABOUTUS extends Component {
           </a>
           <a href="https://github.com/dixitgarg059">
           <div className="card play-card" style={{ width: "18rem" }}> 
-            <img className="card-img-top" src="http://userpic.codeforces.com/779831/title/26d107914c707a5e.jpg " 
+            <img className="card-img-top" src="https://avatars2.githubusercontent.com/u/47675767?s=400&u=2310f3de0951d7b0df76e857fcc05a2898430b5c&v=4" 
             alt="27 cards trick" height="285px"/>
             <div className="card-body">
               <h5 className="card-title">Dixit Kumar Garg</h5>
