@@ -59,7 +59,6 @@ export default class Products extends Component {
                 offset:100,
                 beep:true,
                 timeout:3000
-
             })
 
             this.state.cards1.shift();
@@ -109,8 +108,8 @@ export default class Products extends Component {
     }
     render() {
         return (
-            <div className='comp-2-main'>
-                <Alert stack={{limit: 10, spacing: 50}} />
+            <div className='comp-2-main' style={{paddingTop: "100px"}}>
+                <Alert stack={{limit: 10, spacing: 50}} html={true}/>
 
                 <br></br>
                 <button className='btn btn-outline-danger' type="button" onClick={this.Show_logic} style={{ float: 'right' }} > Show Logic </button>
