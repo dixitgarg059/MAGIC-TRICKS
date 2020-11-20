@@ -109,7 +109,8 @@ export default class GAME5 extends Component {
             available: available,
         })
         if (this.checkAv(available) == false) {
-            if(win==null) win = 'gold';
+            if(win==null && this.state.dplayer == false) win = 'gold';
+            else if(win==null && this.state.dplayer == true)  win = (turn == 1)?'gold':'blue';
             Alert.success(`${win} wins.`, { offset: 100 });
             this.setState({
                 win: win,
