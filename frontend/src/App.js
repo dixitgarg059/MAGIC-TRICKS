@@ -39,7 +39,7 @@ function App() {
               onClick={()=>{
                 setActive(0);
               }}>
-              <strong>MAGARCADE</strong></Link>
+              <strong>ARENA</strong></Link>
               <Link to="/Play" className={`${active==1?"nav-ele-active":'nav-ele'}`} 
              
               onClick={()=>{

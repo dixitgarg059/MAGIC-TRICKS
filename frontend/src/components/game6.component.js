@@ -99,7 +99,7 @@ export default class GAME5 extends Component {
             turn = t[2];
         }
         else if(this.state.dplayer==false && this.checkAv(available)==false){
-            win = 'blue';
+            win = 'Blue';
         }
 
         
@@ -109,8 +109,8 @@ export default class GAME5 extends Component {
             available: available,
         })
         if (this.checkAv(available) == false) {
-            if(win==null && this.state.dplayer == false) win = 'gold';
-            else if(win==null && this.state.dplayer == true)  win = (turn == 1)?'gold':'blue';
+            if(win==null && this.state.dplayer == false) win = 'Gold';
+            else if(win==null && this.state.dplayer == true)  win = (turn == 1)?'Gold':'Blue';
             Alert.success(`${win} wins.`, { offset: 100 });
             this.setState({
                 win: win,
@@ -136,13 +136,17 @@ export default class GAME5 extends Component {
                     Show Logic{" "}
                 </button>
                 <h1><strong>Knight vs Knight</strong></h1>
-                <br></br>{
+                <br/>
+                <p>
+                A game of chess but there are only Knights! A player makes their move by placing their knight on the board. A valid move is one in which the position chosen by the player to place their knight is not in limbo (position is not occupied or under attack by another knight). The player who fails to complete their move loses.
+                </p>
+                <br/>{
                     (() => {
 
                         if (this.state.stage == 1) {
                             return (<div>
                                 <br></br>
-                                <div class="text-logic">Click the number of rows and columns in the chess board</div>
+                                <div class="text-logic">Choose the number of rows and columns of the chessboard to play.</div>
                                 <br></br>
                                 <div style={{ top: '10px', position: 'relative', alignItems: 'center' }}>
                                     {Array.from({ length: 8 }, (_, i) => i + 1).map((e) => {
@@ -177,6 +181,9 @@ export default class GAME5 extends Component {
                         else if (this.state.stage == 2) {
                             return (
                                 <div>
+                                <div class="text-logic">Choose to play against the computer or another player!</div>
+                                <br/><br/>
+
                                     <button className={`btn ${this.state.dplayer == false ? 'btn-warning' : 'btn-outline-warning'}`}
                                         style={{ borderRadius: '0' }}
                                         onClick={() => {
@@ -206,7 +213,11 @@ export default class GAME5 extends Component {
                         }
                         else if (this.state.stage == 3) return (
                             <div>
-                                <br></br>
+                                <br/>
+                                <p>
+                                    Try to make a valid move by choosing one of the positions available on the board
+                                </p>
+                                <br/>
                                 <h5>{(this.state.turn == 1) ? "Blue's Turn" : "Gold's Turn"}</h5>
                                 <br></br>
                                 {
@@ -284,7 +295,7 @@ export default class GAME5 extends Component {
                             </div>
 
                         )
-                        else return <div>{this.state.win} won. <br></br><br></br>
+                        else return <div>{this.state.win} Won! <br></br><br></br>
                             <button className="btn btn-outline-danger" onClick={() => {
                                 window.location.reload();
 

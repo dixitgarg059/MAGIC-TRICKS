@@ -73,7 +73,7 @@ export default class ABOUTUS extends Component {
             </div>
           </div>
           </a>
-          <a href="https://github.com/namanverma">
+          <a href="https://github.com/naman632">
           <div className="card play-card" style={{ width: "18rem" }}> 
             <img className="card-img-top" src="https://scontent.famd5-1.fna.fbcdn.net/v/t1.0-9/69455318_120546009278447_538058135449894912_o.jpg?_nc_cat=106&ccb=2&_nc_sid=09cbfe&_nc_ohc=40jsJdiyoisAX_t_EKe&_nc_ht=scontent.famd5-1.fna&oh=1f97888df39c1564ce8f4a2aac3a2432&oe=5FDBDE3F" 
             alt="27 cards trick" />

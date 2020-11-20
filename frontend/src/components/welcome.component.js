@@ -21,7 +21,7 @@ export default class WELCOME extends Component {
                  <p>
                  <span className='bg'></span>
                  <span className='base'></span>
-                 <span className='text'>Play Magarcade</span>
+                 <span className='text'>Enter</span>
                  </p>
                  </a>  
                  {/* <a href='#' className='white'>

@@ -140,7 +140,7 @@ export default class GAME4 extends Component {
                         if (this.state.stage == 1) {
                             return <div>
                                 <br></br>
-                                <div class="text-logic">Keep in memory, a card from the deck given below.</div>
+                                <div class="text-logic">Pick a card from the deck given below and make sure to remember it!</div>
                                 <br></br>
                                 <button onClick={() => { this.setState({ stage: 2 }) }} style={{
                                     border: 'none',
