@@ -3,7 +3,6 @@ import axios from 'axios';
 import $ from "jquery";
 import '../App.css';
 import Alert from 'react-s-alert';
-var lt = new Array(11).fill(false);
 export default class Products extends Component {
 
     constructor(props) {
@@ -26,7 +25,30 @@ export default class Products extends Component {
             total_count: 0,
             limit: 11,
             // hintArr:[null,null]
-        }
+        
+        queens:[
+            require(`../card_pics/${Math.floor(Math.random() * 4) * 13 + 12}.png`),
+            require(`../card_pics/${Math.floor(Math.random() * 4) * 13 + 12}.png`),
+            require(`../card_pics/${Math.floor(Math.random() * 4) * 13 + 12}.png`),
+            require(`../card_pics/${Math.floor(Math.random() * 4) * 13 + 12}.png`),
+            require(`../card_pics/${Math.floor(Math.random() * 4) * 13 + 12}.png`),
+            require(`../card_pics/${Math.floor(Math.random() * 4) * 13 + 12}.png`),
+            require(`../card_pics/${Math.floor(Math.random() * 4) * 13 + 12}.png`),
+            require(`../card_pics/${Math.floor(Math.random() * 4) * 13 + 12}.png`),
+        ],
+        kings:[
+            require(`../card_pics/${Math.floor(Math.random() * 4) * 13 + 13}.png`),
+            require(`../card_pics/${Math.floor(Math.random() * 4) * 13 + 13}.png`),
+            require(`../card_pics/${Math.floor(Math.random() * 4) * 13 + 13}.png`),
+            require(`../card_pics/${Math.floor(Math.random() * 4) * 13 + 13}.png`),
+            require(`../card_pics/${Math.floor(Math.random() * 4) * 13 + 13}.png`),
+            require(`../card_pics/${Math.floor(Math.random() * 4) * 13 + 13}.png`),
+            require(`../card_pics/${Math.floor(Math.random() * 4) * 13 + 13}.png`),
+            require(`../card_pics/${Math.floor(Math.random() * 4) * 13 + 13}.png`),
+
+        ]
+    }
+
     }
     componentDidMount() {
         $(".play").show();
@@ -43,22 +65,14 @@ export default class Products extends Component {
 
         var arr = this.state.selected_indices.slice()
 
-        if (arr.length != 2 || (arr[0] != arr[1] - 1) || (this.state.cards1[arr[0]] == this.state.cards1[arr[1]])) {
+        if (arr.length != 2 || (this.state.cards1[arr[0]] == this.state.cards1[arr[1]])) {
             Alert.error("Invalid Move",
                 {
                     beep: true,
                     offset: '100',
                     timeout: 1000
                 });
-            // for (var i = 0; i < 10; i++) {
-            //     $("." + String(i)).css("background-color", "white")
-            //     $("." + String(i)).css("box-shadow", "none");
-            //     $("." + String(i)).css("transform", "none");
-            //     // $("." + String(i)).addClass("kingqueen-card");
-
-            //     lt = new Array(11).fill(false);
-
-            // }
+           
             this.setState({
                 selected_indices: [],
             })
@@ -80,7 +94,6 @@ export default class Products extends Component {
         console.log(cards2);
 
         this.setState({ cards1: cards2, selected_indices: [] });
-        lt = new Array(11).fill(false);
         if (this.state.Player == "Player1") {
             this.setState({ Player: "Player2" });
         }
@@ -115,7 +128,6 @@ export default class Products extends Component {
                     timeout: 1000
                 });
 
-        // this.props.history.push({pathname:'/Play/Game2'})
         window.location.reload();
     }
 
@@ -130,10 +142,6 @@ export default class Products extends Component {
                 <div className="container" style={
                     {
                         marginBottom: '25px',
-                        //   backgroundColor:'white',
-                        //   color:'white'
-                        // borderRadius:'10px',
-                        // boxShadow:'0 0 5px black'
                     }
                 }>
                     <br></br>
@@ -172,18 +180,22 @@ export default class Products extends Component {
                      }}>
                     {this.state.cards1.map((char, index) => {
                         if (this.state.selected_indices.indexOf(index) != -1) {
-                            return <div className='kingqueen-card' class={`${index} kingqueen-card `} style={{ boxShadow: "0 0 20px yellow" }} >
-                                <img src={char == '0' ? require(`../card_pics/${Math.floor(Math.random() * 4) * 13 + 12}.png`) : require(`../card_pics/${Math.floor(Math.random() * 4) * 13 + 13}.png`)} width="100px"></img>
-                            </div>;
+                            return  <button style={{ border: 'none', backgroundColor:'transparent' }} onClick={() => {
+                                if (this.state.selected_indices.indexOf(index) != -1)
+                                    this.setState({
+                                        selected_indices: [...this.state.selected_indices.slice(0,this.state.selected_indices.indexOf(index)),
+                                            ...this.state.selected_indices.slice(this.state.selected_indices.indexOf(index)+1)
+                                        
+                                        ],
+                                    })
+
+                            }}>
+                            <div className='kingqueen-card' class={`${index} kingqueen-card `} style={{ boxShadow: "0 0 20px yellow" }} >
+                                <img src={char == '0' ? this.state.kings[index] : this.state.queens[index]} width="100px"></img>
+                            </div></button>;
                         }
                         return (
-                            //   <span class = {index} style={
-                            //     {
-                            //      border: '1px solid black',
-                            //      padding: '11.4px 12px',
-
-                            //     }
-                            //   } > {char} </span>
+                         
 
                             <button style={{ border: 'none', backgroundColor:'transparent' }} onClick={() => {
                                 if (this.state.selected_indices.indexOf(index) == -1)
@@ -192,7 +204,7 @@ export default class Products extends Component {
                                     })
 
                             }}><div className='kingqueen-card' class={`${index} kingqueen-card`} >
-                                    <img src={char == '0' ? require(`../card_pics/${Math.floor(Math.random() * 4) * 13 + 12}.png`) : require(`../card_pics/${Math.floor(Math.random() * 4) * 13 + 13}.png`)} width="100px"></img>
+                                    <img src={char == '0' ? this.state.kings[index] : this.state.queens[index]} width="100px"></img>
                                 </div></button>
                         )
                     }
@@ -205,15 +217,12 @@ export default class Products extends Component {
                         marginTop: '18px'
                     }
                 }>
-                    {/* <nav className="navbar navbar-expand-lg navbar-light "> */}
-                    {/* <div className="collapse navbar-collapse"> */}
+  
                     <ul className="navbar-nav mr-auto">
                         <li class="play"><button type="button" onClick={this.Erase} className='btn btn-outline-danger'>Marry them off</button></li>
                         <li class="loose"><button type="button" onClick={this.Loose} className='btn btn-outline-danger'>Finish</button></li>
 
                     </ul>
-                    {/* </div> */}
-                    {/* </nav> */}
                     <br />
                     <button className='btn btn-warning' onClick={
                         () => {
