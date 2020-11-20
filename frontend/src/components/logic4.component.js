@@ -6,6 +6,8 @@ export default class LOGIC4 extends Component {
 
     render() {
         return (
+            <div style={{paddingTop: "100px"}}>
+
             <MathJax.Context input='ascii'>
 
                 <div class="text-logic" >
@@ -213,6 +215,7 @@ export default class LOGIC4 extends Component {
 
                 </div>
             </MathJax.Context >
+        </div>
         )
     }
 }

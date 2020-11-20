@@ -5,7 +5,7 @@ import MathJax from 'react-mathjax2'
 export default class LOGIC5 extends Component {
   render() {
     return (
-      <div class="text-logic">
+      <div class="text-logic" style={{paddingTop: "100px"}}>
         <h1>Optimal strategy</h1>
         <p>
           Let N be the size of the side of chess board.

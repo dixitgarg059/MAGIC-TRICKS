@@ -230,7 +230,7 @@ export default class GAME4 extends Component {
                                 <span style={{ paddingLeft: "10em" }}></span>
                                 <br />
                                 <div class="text-logic">
-                                    <br /> <br /> <br />
+                                    <br /> 
                                     Your card is: <br /> <img src={require(`../card_pics/${deck[this.state.favNum - 1]}.png`)} width="100px"></img><br></br><br />
                                     At the position {this.state.favNum} (Your Number) in the deck<br></br>
                                     <br></br>

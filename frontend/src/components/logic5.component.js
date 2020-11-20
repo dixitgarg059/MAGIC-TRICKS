@@ -6,7 +6,7 @@ export default class LOGIC5 extends Component {
   render() {
     return (
     <MathJax.Context input='ascii'>
-      <div class="text-logic" > 
+      <div class="text-logic" style={{paddingTop: "100px"}}> 
           <h1 class="logic-h1"><strong>The Trick</strong></h1>
           <p>
           A User is invited to pick a card from 1st row of a well shuffled deck of cards.
