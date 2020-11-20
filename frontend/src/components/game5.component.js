@@ -329,22 +329,18 @@ export default class GAME5 extends Component {
             {" "}
             Show Logic{" "}
           </button>
-          <div className="game">
-            <p class="h2">The Kruskal Count Card Trick</p>
-            <p>
-              The cards below were ordered by shuffling a deck of cards and then
-              dealing them out.
-              <br />
+          <div>
+            <h1><strong>The Kruskal Count Card Trick</strong></h1>
+            <p className="text-logic">
               Click on any card in the first row. Whatever number is on this
-              card move this many cards to the right and click the new card,
-              treating Ace as a 1 and face cards as 5, and wrapping around to
-              the left side of the next row. Repeat from the card just clicked.
+              card, move this many cards to the right,
+              treating Ace as a 1 and face cards as one of the values chosen below.
               I magically know that you will (usually) end up on the 'trap'
-              card, indicated by a thick border.
+              card predicted.
             </p>
             <br />
-            <div className="game">
-              <h2>Choose one of the following values for the face cards:</h2>
+            <div>
+              <h2 className="text-logic">Choose one of the following values for the face cards:</h2>
               <button
                 className="btn btn-info facevalue"
                 onClick={() => this.keys(1)}
@@ -379,7 +375,7 @@ export default class GAME5 extends Component {
               <br />
               <p>
                 The value of face cards will determine the accuracy of guessing
-                your card. (Lower = Better chance)
+                your card. (Hint: Try a lower number!)
               </p>
             </div>
           </div>
@@ -399,7 +395,17 @@ export default class GAME5 extends Component {
             Show Logic{" "}
           </button>
           <div className="game">
-            <p class="h2">The Kruskal Count Card Trick</p>
+          <h1><strong>The Kruskal Count Card Trick</strong></h1>
+          <br/>
+            <p className="text-logic">
+            The cards below were ordered by shuffling a deck of cards and then
+              dealing them out.
+              Click on any card in the first row and confirm your choice. Whatever number is on this
+              card, move this many cards to the right by clicking the button given,
+              treating Ace as a 1 and face cards as the chosen value.
+              I magically know that you will (usually) end up on the 'trap'
+              card predicted.
+              </p>
             <br />
           </div>
           <button
