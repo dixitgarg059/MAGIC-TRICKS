@@ -190,7 +190,7 @@ class Board extends React.Component {
   render() {
     if (this.state.fixed == 0) {
       return (
-        <div>
+        <div >
           <p class="h3">Choose your card from the first row of the deck</p>
           <Alert stack={{ limit: 10, spacing: 50 }} />
           <div>
@@ -300,7 +300,7 @@ export default class GAME5 extends Component {
   render() {
     if (this.state.stage == 1) {
       return (
-        <div>
+        <div style={{paddingTop: "100px"}}>
           <button
             type="button"
             onClick={this.Show_logic}
@@ -368,7 +368,7 @@ export default class GAME5 extends Component {
       );
     } else if (this.state.stage == 2) {
       return (
-        <div>
+        <div style={{paddingTop: "100px"}}>
           <button
             type="button"
             onClick={this.Show_logic}

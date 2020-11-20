@@ -121,7 +121,7 @@ export default class GAME5 extends Component {
     render() {
 
         return (
-            <div>
+            <div style={{paddingTop: "100px"}}>
 
                 <Alert stack={{ limit: 10, spacing: 50 }} />
                 <br></br>

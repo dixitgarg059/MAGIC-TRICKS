@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/CARD-TRICKS/static/css/main.b5211b2e.chunk.css",
-    "main.js": "/CARD-TRICKS/static/js/main.d845a408.chunk.js",
-    "main.js.map": "/CARD-TRICKS/static/js/main.d845a408.chunk.js.map",
+    "main.js": "/CARD-TRICKS/static/js/main.2b836d71.chunk.js",
+    "main.js.map": "/CARD-TRICKS/static/js/main.2b836d71.chunk.js.map",
     "runtime-main.js": "/CARD-TRICKS/static/js/runtime-main.d0188df3.js",
     "runtime-main.js.map": "/CARD-TRICKS/static/js/runtime-main.d0188df3.js.map",
     "static/css/2.9be3c371.chunk.css": "/CARD-TRICKS/static/css/2.9be3c371.chunk.css",
-    "static/js/2.05e85e13.chunk.js": "/CARD-TRICKS/static/js/2.05e85e13.chunk.js",
-    "static/js/2.05e85e13.chunk.js.map": "/CARD-TRICKS/static/js/2.05e85e13.chunk.js.map",
+    "static/js/2.673994f6.chunk.js": "/CARD-TRICKS/static/js/2.673994f6.chunk.js",
+    "static/js/2.673994f6.chunk.js.map": "/CARD-TRICKS/static/js/2.673994f6.chunk.js.map",
     "index.html": "/CARD-TRICKS/index.html",
-    "precache-manifest.428036dd70a66bab6c5e89bd7f265040.js": "/CARD-TRICKS/precache-manifest.428036dd70a66bab6c5e89bd7f265040.js",
+    "precache-manifest.1ec14fb6bb2a7537962bfd1769b5569f.js": "/CARD-TRICKS/precache-manifest.1ec14fb6bb2a7537962bfd1769b5569f.js",
     "service-worker.js": "/CARD-TRICKS/service-worker.js",
     "static/css/2.9be3c371.chunk.css.map": "/CARD-TRICKS/static/css/2.9be3c371.chunk.css.map",
     "static/css/main.b5211b2e.chunk.css.map": "/CARD-TRICKS/static/css/main.b5211b2e.chunk.css.map",
-    "static/js/2.05e85e13.chunk.js.LICENSE.txt": "/CARD-TRICKS/static/js/2.05e85e13.chunk.js.LICENSE.txt",
+    "static/js/2.673994f6.chunk.js.LICENSE.txt": "/CARD-TRICKS/static/js/2.673994f6.chunk.js.LICENSE.txt",
     "static/media/1.png": "/CARD-TRICKS/static/media/1.17ca9f77.png",
     "static/media/10.png": "/CARD-TRICKS/static/media/10.19635027.png",
     "static/media/11.png": "/CARD-TRICKS/static/media/11.1595a3ea.png",
@@ -94,6 +94,7 @@
     "static/media/knight.jpg": "/CARD-TRICKS/static/media/knight.0ba34c6f.jpg",
     "static/media/kruskal.jpg": "/CARD-TRICKS/static/media/kruskal.d9d4c711.jpg",
     "static/media/left-arrow.png": "/CARD-TRICKS/static/media/left-arrow.ff06d8c8.png",
+    "static/media/magic.gif": "/CARD-TRICKS/static/media/magic.a3ef1289.gif",
     "static/media/play-button.png": "/CARD-TRICKS/static/media/play-button.b9ff8af5.png",
     "static/media/positions-blocked.png": "/CARD-TRICKS/static/media/positions-blocked.6653f182.png",
     "static/media/purple_back.png": "/CARD-TRICKS/static/media/purple_back.44961e95.png",
@@ -107,8 +108,8 @@
   "entrypoints": [
     "static/js/runtime-main.d0188df3.js",
     "static/css/2.9be3c371.chunk.css",
-    "static/js/2.05e85e13.chunk.js",
+    "static/js/2.673994f6.chunk.js",
     "static/css/main.b5211b2e.chunk.css",
-    "static/js/main.d845a408.chunk.js"
+    "static/js/main.2b836d71.chunk.js"
   ]
 }

@@ -133,7 +133,7 @@ export default class Products extends Component {
 
     render() {
         return (
-            <div>
+            <div style={{paddingTop: "100px"}}>
                 <Alert stack={{ limit: 10, spacing: 50 }} />
 
                 <button type="button" onClick={this.Show_logic} style={{ float: 'right' }} className='btn btn-outline-danger'> Show Logic </button>

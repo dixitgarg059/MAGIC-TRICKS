@@ -29,7 +29,7 @@ function App() {
   return (
     <Router basename="/CARD-TRICKS">
       <div>
-        <nav className="navbar navbar-expand-xl navbar-dark fixed-top" style={{ backgroundColor: 'rgb(40,40,40)',padding:'0px' }}>
+        <nav className="navbar navbar-expand-xl navbar-dark fixed-top" style={{ backgroundColor: 'rgb(40,40,40)',padding:'0px', opacity: "0.7" }}>
 
           <div className="navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
@@ -65,8 +65,10 @@ function App() {
           <Route path="/Play" exact render={(props)=>{
             return <PLAY {...props} setActive={setActive}/>
           }} />
-          
-          <Route path="/Purpose" exact component={PURPOSE} />
+          <Route path="/Purpose" exact render={(props)=>{
+            return <PURPOSE {...props} setActive={setActive}/>
+          }} />          
+          {/* <Route path="/Purpose" exact component={PURPOSE} /> */}
           <Route path="/Play/Game1" exact component={GAME1} />
           <Route path="/Play/Game2" exact component={GAME2} />
           <Route path="/Play/Game3" exact component={GAME3} />

@@ -77,7 +77,7 @@ export default class GAME3 extends Component {
     }
     render() {
         return (
-            <div>
+            <div style={{paddingTop: "100px"}}>
                 <Alert stack={{limit: 10, spacing: 50}} />
                 <br></br>
                 <button className='btn  btn-outline-danger' type="button" onClick={this.Show_logic} style={{ float: 'right' }} > Show Logic </button>

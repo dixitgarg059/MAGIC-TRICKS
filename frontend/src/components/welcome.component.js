@@ -17,7 +17,7 @@ export default class WELCOME extends Component {
         flexFlow: 'column'
         }}
             >
-             <a href='/Play' onClick={()=>{this.props.func(1)}}>
+             <a href='/CARD-TRICKS/Play' onClick={()=>{this.props.func(1)}}>
                  <p>
                  <span className='bg'></span>
                  <span className='base'></span>

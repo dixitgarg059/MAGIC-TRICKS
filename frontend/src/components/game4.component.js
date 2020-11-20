@@ -103,7 +103,7 @@ export default class GAME4 extends Component {
     }
     render() {
         return (
-            <div>
+            <div style={{paddingTop: "100px"}}>
 
 
                 <h1>
@@ -251,6 +251,8 @@ export default class GAME4 extends Component {
                                     }
 
                                     >Logic</button>
+                                    <br/> <br/>
+                                    <img src={require("../assets/magic.gif")} alt="magic-gif"/>
                                 </div>
                             </div>
                         }
