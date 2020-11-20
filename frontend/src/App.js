@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import './App.css';
 import PLAY from './components/play.component'
 import WELCOME from './components/welcome.component'
-import PURPOSE from './components/purpose.component'
+// import PURPOSE from './components/purpose.component'
 import GAME1 from './components/game1.component'
 import GAME2 from './components/game2.component'
 import GAME3 from './components/game3.component'
@@ -45,11 +45,11 @@ function App() {
               onClick={()=>{
                 setActive(1);
               }}>Play</Link>
-              <Link to="/Purpose" className={`${active==2?"nav-ele-active":'nav-ele'}`} 
+              {/* <Link to="/Purpose" className={`${active==2?"nav-ele-active":'nav-ele'}`} 
              
               onClick={()=>{
                 setActive(2);
-              }}>Purpose</Link>
+              }}>Purpose</Link> */}
             </div>
           </div>
         </nav>
@@ -65,9 +65,9 @@ function App() {
           <Route path="/Play" exact render={(props)=>{
             return <PLAY {...props} setActive={setActive}/>
           }} />
-          <Route path="/Purpose" exact render={(props)=>{
+          {/* <Route path="/Purpose" exact render={(props)=>{
             return <PURPOSE {...props} setActive={setActive}/>
-          }} />          
+          }} />           */}
           {/* <Route path="/Purpose" exact component={PURPOSE} /> */}
           <Route path="/Play/Game1" exact component={GAME1} />
           <Route path="/Play/Game2" exact component={GAME2} />

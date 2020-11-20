@@ -8,7 +8,7 @@ for (let i = 1; i <= 52; i++) {
 }
 var first = -1;
 var steps = [];
-var value = 0;
+var trapid = -1;
 
 function randomint() {
   return Math.floor(Math.random() * 52 + 1);
@@ -60,6 +60,11 @@ class Board extends React.Component {
   }
   handleClick(i) {
     // console.log(i);
+    // if(this.props.trapid==-1)
+    // {
+    //   this.trapset();
+    // }
+    
     first = i;
     if(this.state.fixed==0){
       if (this.state.selarr.indexOf(i) == -1)
@@ -98,6 +103,7 @@ class Board extends React.Component {
         Alert.error("Please select card from first row", { offset: 125 });
       return;
     }
+    // console.log(this.props.trapid);
     if(this.state.fixed==0){
       this.setState({
         fixed: 1,
@@ -114,7 +120,7 @@ class Board extends React.Component {
     // console.log(next); // index in array
     if (next + loop >= 52) {
       Alert.success("Walk complete", { offset: 125 });
-      if (next != this.props.trapid) {
+      if (next != trapid) {
         Alert.error("Trap avoided", { offset: 125 });
       }
       return;
@@ -149,8 +155,11 @@ class Board extends React.Component {
       pick = pick + nt;
     }
     this.props.func(pick);
+    console.log(`after`,trapid);
+    return;
   }
   renderSquare(i) {
+    // console.log(this.props.trapid);
     if (this.state.fixed == 0) {
       if (this.arr.indexOf(i) < 7) {
         if (this.state.selarr.indexOf(i) == -1) {
@@ -167,35 +176,37 @@ class Board extends React.Component {
       }
     } else {
       if (this.state.selarr.indexOf(i) == -1) {
-        return <Square class={"mycard"} id={i} />;
+        if (this.arr.indexOf(i) == trapid) {
+          return <Square class={"trap"} id={i} onClick={() => this.handleClick(i)}/>;
+        }else {
+          return <Square class={"mycard"} id={i} onClick={() => this.handleClick(i)}/>;
+        }
       } else {
-        if (this.arr.indexOf(i) == this.props.trapid) {
-          return <Trap class={"trap"} id={i} />;
+        if (this.arr.indexOf(i) == trapid) {
+          return <Trap class={"trap"} id={i} onClick={() => this.handleClick(i)}/>;
         } else {
           return <Square class={"mycard-bold"} id={i} />;
         }
       }
     }
   }
-  componentDidMount() {
-    this.trapset();
-    // $(document).on('click', function(event) {
-    //   $('html, body').animate({
-    //     scrollTop: $("devdiv").offset().top
-    //   }, 800,function(){
-    //     // window.location.hash = hash;
-    //   });
-    // });
-  }
+ 
   render() {
+    if(trapid==-1)
+    this.trapset();
+
     if (this.state.fixed == 0) {
       return (
-        <div >
+        <div>
+          <p>Trap card:</p>
+          <Square class={"mycard"} id={this.arr[trapid]}/>
+          <br/>
+          <br/>
           <p class="h3">Choose your card from the first row of the deck</p>
           <Alert stack={{ limit: 10, spacing: 50 }} />
           <div>
             <button
-              style={{ left: "45%", position: "relative" }}
+              style={{ left: "20%", position: "relative" }}
               className="btn btn-primary"
               onClick={() => this.nextstep(first)}
             >
@@ -224,11 +235,16 @@ class Board extends React.Component {
     } else {
       return (
         <div>
-          <p class="h3">Walk your path by clicking the button:</p>
+          <p>Trap card:</p>
+          <Square class={"mycard"} id={this.arr[trapid]}/>
+          <br/>
+          <br/>
+          <p style={{marginLeft: "auto"}} class="h3">Walk your path by clicking the button:</p>
           <Alert stack={{ limit: 10, spacing: 50 }} />
           <div>
+
             <button
-              style={{ left: "45%", position: "relative" }}
+              style={{ left: "20%", position: "relative" }}
               className="btn btn-outline-primary"
               onClick={() => this.nextstep(first)}
             >
@@ -267,13 +283,16 @@ export default class GAME5 extends Component {
     };
   }
   trapsarenotgay = (id) => {
-    this.setState({
-      trapid: id,
-    });
+    // this.setState({
+    //   // trapid: id,
+    //   // stage: 3,
+    // });
+    trapid = id;
     console.log(`ttt:`, id);
   };
   keys = (num) => {
-    value = num;
+    // value = num;
+    console.log(num);
     for (let i = 0; i <= 52; i++) {
       if (i % 13 >= 11 || i % 13 == 0) {
         steps.push(num);
@@ -365,6 +384,7 @@ export default class GAME5 extends Component {
             </div>
           </div>
         </div>
+        
       );
     } else if (this.state.stage == 2) {
       return (
@@ -392,7 +412,7 @@ export default class GAME5 extends Component {
           <br />
           <br />
           <div>
-            <Board trapid={this.state.trapid} func={this.trapsarenotgay} />
+            <Board func={this.trapsarenotgay} />
           </div>
         </div>
       );
