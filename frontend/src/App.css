@@ -265,23 +265,12 @@ html{
   padding-top:30px;
 }
 .home-back{
-  /* background-image: url('./assets/home.jpg');
+  background-image: url('./assets/cityscape.gif');
   background-size: cover;
-  background-repeat: no-repeat; */
-  /* height:90vh; */
-  /* width: 100 */
-  /* background: url("https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg"); */
-  height: 93vh;
-  background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
-  /* position: fixed; */
+  height: 100vh;
   background-position: center;
-  /* back */
-  /* height:2000px; */
-  /* width:900px; */
-  /* width:2000px; */
-  /* background-color: white; */
+
 }
 
 .logic-h1 {
@@ -394,4 +383,55 @@ html{
   line-height: 34px;
   padding: 0;
   text-align: center;
+}
+
+.w-a{
+  width: 100%;
+  width: 100%;
+    max-width: 240px;
+    height: 56px;
+    padding: 8px;
+    font-size: 0.8rem;
+    font-weight: 900;
+    color: #ff4655;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0 0 0 1px inset rgba(#ece8e1, 0.3);
+    position: relative;
+    margin: 10px 0;
+
+}
+.nav-ele-active:hover{
+  /* background-color: #fb5f6c; */
+  /* color:#ff4655; */
+  color: white;
+  text-decoration: none;
+
+}
+.nav-ele-active{
+  background-color:#ff4655;
+  text-decoration: none;
+  color: white;
+  padding:20px;
+  padding-left:40px;
+  padding-right:40px;
+}
+/* .nav{
+  back
+
+
+} */
+.nav-ele{
+  color: white;
+  padding:20px;
+  text-decoration: none;
+  padding-left:40px;
+  padding-right:40px;
+}
+.nav-ele:hover{
+background-color: #363636;
+text-decoration: none;
+color: white;
+
 }
