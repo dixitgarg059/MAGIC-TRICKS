@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "11804c46986f9d22a474d52346e2254b",
+    "revision": "f03cb38e90e32b3a6015b01dad280d74",
     "url": "/CARD-TRICKS/index.html"
   },
   {
-    "revision": "c33f751e4699aa92d8e0",
+    "revision": "fe566d0c2b168abc1575",
     "url": "/CARD-TRICKS/static/css/2.9be3c371.chunk.css"
   },
   {
-    "revision": "fe78d918a219150f05aa",
-    "url": "/CARD-TRICKS/static/css/main.a2899ec1.chunk.css"
+    "revision": "a7cfb13020f6d62e3dbe",
+    "url": "/CARD-TRICKS/static/css/main.b5211b2e.chunk.css"
   },
   {
-    "revision": "c33f751e4699aa92d8e0",
-    "url": "/CARD-TRICKS/static/js/2.3567635d.chunk.js"
+    "revision": "fe566d0c2b168abc1575",
+    "url": "/CARD-TRICKS/static/js/2.05e85e13.chunk.js"
   },
   {
     "revision": "896a8804d0288c86859ec9465c44ad4a",
-    "url": "/CARD-TRICKS/static/js/2.3567635d.chunk.js.LICENSE.txt"
+    "url": "/CARD-TRICKS/static/js/2.05e85e13.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "fe78d918a219150f05aa",
-    "url": "/CARD-TRICKS/static/js/main.48c72bdb.chunk.js"
+    "revision": "a7cfb13020f6d62e3dbe",
+    "url": "/CARD-TRICKS/static/js/main.d845a408.chunk.js"
   },
   {
     "revision": "62b32d804eaf17f087ea",
@@ -248,8 +248,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/CARD-TRICKS/static/media/back_cards-07.e9ac9257.png"
   },
   {
-    "revision": "f92943915f56a7b04f1805fbad58f4be",
-    "url": "/CARD-TRICKS/static/media/black.f9294391.jpg"
+    "revision": "4f2ee508057fd4fd0e77d9299ca6aedb",
+    "url": "/CARD-TRICKS/static/media/black.4f2ee508.jpg"
   },
   {
     "revision": "0325e0e3f92f6e7d03e0ba9a94b32c54",
@@ -280,8 +280,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/CARD-TRICKS/static/media/chinese.a7be8f92.jpg"
   },
   {
+    "revision": "88540332a52fd6dbd8de268d1338a200",
+    "url": "/CARD-TRICKS/static/media/cityscape.88540332.gif"
+  },
+  {
+    "revision": "45ccc923ffac67e02ace89054b6ca176",
+    "url": "/CARD-TRICKS/static/media/gold.45ccc923.jpg"
+  },
+  {
     "revision": "47493612630efdb62cb490a10fbda253",
     "url": "/CARD-TRICKS/static/media/golden-knight.47493612.png"
+  },
+  {
+    "revision": "0d1b5cc421cb18e3afd859efd8661cb0",
+    "url": "/CARD-TRICKS/static/media/gothic.0d1b5cc4.jpg"
   },
   {
     "revision": "db53954a64b0a647a569a1d3964135ce",
@@ -340,6 +352,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/CARD-TRICKS/static/media/play-button.b9ff8af5.png"
   },
   {
+    "revision": "6653f182c4dfc2818a5a5bb43d1a82bc",
+    "url": "/CARD-TRICKS/static/media/positions-blocked.6653f182.png"
+  },
+  {
     "revision": "44961e95f84a3c3dc34b701ec6a72e6a",
     "url": "/CARD-TRICKS/static/media/purple_back.44961e95.png"
   },
@@ -352,12 +368,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/CARD-TRICKS/static/media/right-arrow.8c0a0038.png"
   },
   {
-    "revision": "a4a78e045986bc12b99282a9f273110f",
-    "url": "/CARD-TRICKS/static/media/trap.a4a78e04.jpg"
+    "revision": "f93f5ce038de637d4d7659f804333850",
+    "url": "/CARD-TRICKS/static/media/spider.f93f5ce0.png"
   },
   {
-    "revision": "7b4c38764d91ca35ba11b31156ac2094",
-    "url": "/CARD-TRICKS/static/media/white.7b4c3876.jpg"
+    "revision": "41f444e62635ecc995e960d8c4e89f35",
+    "url": "/CARD-TRICKS/static/media/symmetric-move.41f444e6.png"
+  },
+  {
+    "revision": "a4a78e045986bc12b99282a9f273110f",
+    "url": "/CARD-TRICKS/static/media/trap.a4a78e04.jpg"
   },
   {
     "revision": "28340480d387e857bfd012d05652fd70",
