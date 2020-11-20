@@ -388,3 +388,23 @@
   padding: 0;
   text-align: center;
 }
+
+
+/* game 1 logic */
+#crt td  {
+  border: 1px solid #00688B;
+  text-align: center;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+table {
+  border: 1px solid #00688B;
+}
+#crt th{
+  padding-top: 6px;
+  padding-bottom: 6px;
+  text-align: center;
+  background-color: #00688B;
+  color: white;
+}
