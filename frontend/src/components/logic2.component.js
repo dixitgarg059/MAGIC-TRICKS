@@ -5,6 +5,8 @@ import MathJax from 'react-mathjax2';
 export default class LOGIC2 extends Component {
   render() {
     return (
+      <div style={{paddingTop: "100px"}}>
+
       <MathJax.Context input='ascii'>
       <div>
         <br/><br/>
@@ -44,6 +46,7 @@ export default class LOGIC2 extends Component {
         </p>
       </div>
       </MathJax.Context>
+    </div>
     )
   }
 }

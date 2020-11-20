@@ -319,7 +319,7 @@ export default class GAME5 extends Component {
   render() {
     if (this.state.stage == 1) {
       return (
-        <div>
+        <div style={{paddingTop: "100px"}}>
           <button
             type="button"
             onClick={this.Show_logic}
@@ -388,7 +388,7 @@ export default class GAME5 extends Component {
       );
     } else if (this.state.stage == 2) {
       return (
-        <div>
+        <div style={{paddingTop: "100px"}}>
           <button
             type="button"
             onClick={this.Show_logic}

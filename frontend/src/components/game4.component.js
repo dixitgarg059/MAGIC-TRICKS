@@ -103,7 +103,7 @@ export default class GAME4 extends Component {
     }
     render() {
         return (
-            <div>
+            <div style={{paddingTop: "100px"}}>
 
 
                 <h1>
@@ -196,7 +196,7 @@ export default class GAME4 extends Component {
                                                     <div style={{ width: '200px', height: '200px' }}>
                                                         <HAND hand={d} width={150} margin={100} focused={-1} straight={1} />
                                                     </div>
-                                                    <div style={{ marginTop: "200px", marginLeft: "100px", position: "relative" }}>
+                                                    <div style={{ marginTop: "170px", marginLeft: "100px", marginBottom: "10px", position: "relative" }}>
                                                         <button className="btn btn-outline-light" onClick={
                                                             () => {
                                                                 this.selectDeck(e)
@@ -227,11 +227,11 @@ export default class GAME4 extends Component {
                                 }}>
                                     <HAND hand={deck} width={150} margin={100} focused={this.state.favNum} />
                                 </div>
-                                <span style={{paddingLeft: "10em"}}></span>
-                                <br/>
+                                <span style={{ paddingLeft: "10em" }}></span>
+                                <br />
                                 <div class="text-logic">
-                                    <br/> <br/> <br/>
-                                    Your card is: <br/> <img src={require(`../card_pics/${deck[this.state.favNum - 1]}.png`)} width="100px"></img><br></br><br/>
+                                    <br /> 
+                                    Your card is: <br /> <img src={require(`../card_pics/${deck[this.state.favNum - 1]}.png`)} width="100px"></img><br></br><br />
                                     At the position {this.state.favNum} (Your Number) in the deck<br></br>
                                     <br></br>
                                     <button className='btn btn-outline-danger' onClick={
@@ -251,6 +251,8 @@ export default class GAME4 extends Component {
                                     }
 
                                     >Logic</button>
+                                    <br/> <br/>
+                                    <img src={require("../assets/magic.gif")} alt="magic-gif"/>
                                 </div>
                             </div>
                         }
