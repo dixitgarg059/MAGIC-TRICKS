@@ -284,21 +284,10 @@ export default class GAME5 extends Component {
 
                         )
                         else return <div>{this.state.win} won. <br></br><br></br>
-                            {/* <button className="btn btn-outline-danger" onClick={() => {
-                                this.setState({
-                                    barr: null,
-                                    available: null,
-                                    turn: 1,
-                                    dplayer: true,
-                                    number: 8,
-                                    stage: 1,
-                                    win: 0,
-                                    blueloading: false,
-                                    goldloading: false,
-                                    hint : false,
-                                })
+                            <button className="btn btn-outline-danger" onClick={() => {
+                                window.location.reload();
 
-                            }}>Play again</button> */}
+                            }}>Play again</button>
                         </div>
 
                     })()

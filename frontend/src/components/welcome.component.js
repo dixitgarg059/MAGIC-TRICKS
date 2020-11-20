@@ -11,8 +11,8 @@ export default class WELCOME extends Component {
             className='home-back'
             
             style={{
-                marginLeft: auto,
-                marginRight: auto,
+                marginLeft: 'auto',
+                marginRight: 'auto',
             // marginLeft:"50%",
                 // width:'100%',
                 // height:'30%',
