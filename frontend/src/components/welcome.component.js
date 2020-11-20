@@ -2,34 +2,47 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import _img from '../assets/home.jpg';
 import '../App.css';
+import '../home.css';
 export default class WELCOME extends Component {
     
    
     render() {
         return (
+            <div>
             <div 
-            className='home-back'
-            
-            style={{
-                marginLeft: 'auto',
-                marginRight: 'auto',
-            // marginLeft:"50%",
-                // width:'100%',
-                // height:'30%',
-            // paddingTop:'32px',
-            // backgroundSize:'100% 100%',
-            // backgroundImage:`url(${_img})`,
-            }}>
-                {/* <img src={require("../assets/home.jpg")} width="100%" height="925em"></img> */}
+            className='home-back hm'
+            style={{paddingTop:'100px',
+        alignItems:'center',
+        justifyContent:'center',
+        flexFlow: 'column'
+        }}
+            >
+             <a href='/Play' onClick={()=>{this.props.func(1)}}>
+                 <p>
+                 <span className='bg'></span>
+                 <span className='base'></span>
+                 <span className='text'>Play Magarcade</span>
+                 </p>
+                 </a>  
+                 {/* <a href='#' className='white'>
+                     <p>
+                 <span className='bg'></span>
+                 <span className='base'></span>
+                 <span className='text'>Play Valorant</span>
+                 </p>
+                 </a>  
+                 <a href='#' className='transparent'>
+                 <p><span className='bg'></span>
+                 <span className='base'></span>
+                 <span className='text'>Play Valorant</span>
+                 </p> */}
+                 {/* </a>   */}
 
-               
-            <i>
-                "IT IS MAGIC UNTIL YOU UNDERSTAND IT;<br/>
-                IT IS MATHEMATICS THEREAFTER" ~ unknown
 
-            </i>
-            <br/>
-            <button  class="btn btn-secondary btn-lg"><a href="/Play">PLAY</a></button>
+            </div>
+            {/* <div>
+                <h1>hello</h1>
+            </div> */}
             </div>
         )
     }
