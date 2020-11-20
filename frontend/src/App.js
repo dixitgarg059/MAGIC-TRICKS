@@ -27,7 +27,7 @@ function App() {
 
 
   return (
-    <Router>
+    <Router basename="/CARD-TRICKS">
       <div>
         <nav className="navbar navbar-expand-xl navbar-dark fixed-top" style={{ backgroundColor: 'rgb(40,40,40)',padding:'0px' }}>
 
