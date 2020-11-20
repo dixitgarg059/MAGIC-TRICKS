@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import _img from '../assets/home.jpg';
 import '../App.css';
-export default class WELCOME extends Component {
+export default class PURPOSE extends Component {
     
    
     render() {
