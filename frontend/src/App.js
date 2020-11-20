@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import 'react-s-alert/dist/s-alert-default.css';
 import 'react-s-alert/dist/s-alert-css-effects/slide.css';
 import "bootstrap/dist/css/bootstrap.min.css"
+import './App.css';
 import PLAY from './components/play.component'
 import WELCOME from './components/welcome.component'
 import PURPOSE from './components/purpose.component'
@@ -26,31 +27,45 @@ function App() {
 
 
   return (
-    <Router>
-      <div style={{width:'100%',height:'100%'}}>
-        <nav className="navbar navbar-expand-xl navbar-dark fixed-top" style={{ backgroundColor: 'rgb(40,40,40)' }}>
+    <Router basename="/CARD-TRICKS">
+      <div>
+        <nav className="navbar navbar-expand-xl navbar-dark fixed-top" style={{ backgroundColor: 'rgb(40,40,40)',padding:'0px' }}>
 
           <div className="navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
-              <Link to="/" className={`nav-item nav-link ${active==0?"active":''}`} onClick={()=>{
+              <Link to="/" className={``}
+              className={`${active==0?"nav-ele-active":'nav-ele'}`}
+
+              onClick={()=>{
                 setActive(0);
               }}>
-                {/* <img src={require('./assets/home.png')} width="20px"></img> */}
-              Home</Link>
-              <Link to="/Play" className={`nav-item nav-link ${active==1?"active":''}`} onClick={()=>{
+              <strong>MAGARCADE</strong></Link>
+              <Link to="/Play" className={`${active==1?"nav-ele-active":'nav-ele'}`} 
+             
+              onClick={()=>{
                 setActive(1);
               }}>Play</Link>
-              <Link to="/Purpose" className={`nav-item nav-link ${active==2?"active":''}`} onClick={()=>{
+              <Link to="/Purpose" className={`${active==2?"nav-ele-active":'nav-ele'}`} 
+             
+              onClick={()=>{
                 setActive(2);
               }}>Purpose</Link>
-              <a className="nav-item nav-link" href="#">About us</a>
             </div>
           </div>
         </nav>
-          <br />
-          <Route path="/" exact component={WELCOME} />
-        <div className="container" style={{ paddingTop: '50px' }}>
-          <Route path="/Play" exact component={PLAY} />
+          {/* <br /> */}
+          <Route path="/" exact render={()=>{
+           return  <WELCOME func={setActive}/>
+          }}/>
+
+        <div className="container"
+        // style={{ paddingTop: '50px' }}
+        >
+
+          <Route path="/Play" exact render={(props)=>{
+            return <PLAY {...props} setActive={setActive}/>
+          }} />
+          
           <Route path="/Purpose" exact component={PURPOSE} />
           <Route path="/Play/Game1" exact component={GAME1} />
           <Route path="/Play/Game2" exact component={GAME2} />

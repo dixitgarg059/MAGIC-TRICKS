@@ -2,24 +2,47 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import _img from '../assets/home.jpg';
 import '../App.css';
+import '../home.css';
 export default class WELCOME extends Component {
     
    
     render() {
         return (
+            <div>
             <div 
-            className='home-back'
-            
-            style={{
-                // width:'100%',
-                // height:'30%',
-            // paddingTop:'32px',
-            // backgroundSize:'100% 100%',
-            // backgroundImage:`url(${_img})`,
-            }}>
-                {/* <img src={require("../assets/home.jpg")} width="100%" height="925em"></img> */}
+            className='home-back hm'
+            style={{paddingTop:'100px',
+        alignItems:'center',
+        justifyContent:'center',
+        flexFlow: 'column'
+        }}
+            >
+             <a href='/Play' onClick={()=>{this.props.func(1)}}>
+                 <p>
+                 <span className='bg'></span>
+                 <span className='base'></span>
+                 <span className='text'>Play Magarcade</span>
+                 </p>
+                 </a>  
+                 {/* <a href='#' className='white'>
+                     <p>
+                 <span className='bg'></span>
+                 <span className='base'></span>
+                 <span className='text'>Play Valorant</span>
+                 </p>
+                 </a>  
+                 <a href='#' className='transparent'>
+                 <p><span className='bg'></span>
+                 <span className='base'></span>
+                 <span className='text'>Play Valorant</span>
+                 </p> */}
+                 {/* </a>   */}
 
 
+            </div>
+            {/* <div>
+                <h1>hello</h1>
+            </div> */}
             </div>
         )
     }

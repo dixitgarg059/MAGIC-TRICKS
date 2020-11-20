@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&display=swap');
 .App {
   text-align: center;
+  scroll-behavior: smooth;
 }
-
+html{
+  scroll-behavior: smooth;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -52,10 +55,10 @@
   width:100px;
   /* height: 100px; */
 }
-.comp-2-main{
+/* .comp-2-main{ */
   /* background-color: black; */
   /* height: 1600px; */
-}
+/* } */
 .comp-2-set{
   margin-top:10px;
   margin-bottom:10px;
@@ -262,23 +265,12 @@
   padding-top:30px;
 }
 .home-back{
-  /* background-image: url('./assets/home.jpg');
+  background-image: url('./assets/cityscape.gif');
   background-size: cover;
-  background-repeat: no-repeat; */
-  /* height:90vh; */
-  /* width: 100 */
-  /* background: url("https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg"); */
-  height: 93vh;
-  background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
-  /* position: fixed; */
+  height: 100vh;
   background-position: center;
-  /* back */
-  /* height:2000px; */
-  /* width:900px; */
-  /* width:2000px; */
-  /* background-color: white; */
+
 }
 
 .logic-h1 {
@@ -372,10 +364,14 @@
 .mysteps :hover {
   background-color: aqua;
 }
+.facevalue{
+  margin-left: 10%;
+  height:100px;
+  width:80px;
+}
 .trap {
-  border: 7px solid rgb(76, 0, 255);
-  box-shadow: 3px 3px 5px rgb(255, 0, 0);
-  border-radius: 10px;
+  border: 10px solid #fd0000;
+  background-color: rgb(247, 202, 202);
   height: 125px;
   margin-right: 25px;
   margin-left: 35px;
@@ -407,4 +403,54 @@ table {
   text-align: center;
   background-color: #00688B;
   color: white;
+}
+.w-a{
+  width: 100%;
+  width: 100%;
+    max-width: 240px;
+    height: 56px;
+    padding: 8px;
+    font-size: 0.8rem;
+    font-weight: 900;
+    color: #ff4655;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0 0 0 1px inset rgba(#ece8e1, 0.3);
+    position: relative;
+    margin: 10px 0;
+
+}
+.nav-ele-active:hover{
+  /* background-color: #fb5f6c; */
+  /* color:#ff4655; */
+  color: white;
+  text-decoration: none;
+
+}
+.nav-ele-active{
+  background-color:#ff4655;
+  text-decoration: none;
+  color: white;
+  padding:20px;
+  padding-left:40px;
+  padding-right:40px;
+}
+/* .nav{
+  back
+
+
+} */
+.nav-ele{
+  color: white;
+  padding:20px;
+  text-decoration: none;
+  padding-left:40px;
+  padding-right:40px;
+}
+.nav-ele:hover{
+background-color: #363636;
+text-decoration: none;
+color: white;
+
 }

@@ -1,11 +1,25 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import '../App.css';
+import '../home.css';
 import { wrap } from 'module';
 // import * as contentful from 'contentful'
 
 
 export default class PLAY extends Component {
+  componentDidMount() {
+    this.props.setActive(1);
+
+  }
+
+constructor(props){
+
+  super(props);
+  this.Game4 = this
+  .Game4
+  .bind(this);
+}
+
 
 
   Game1 = () => {
@@ -40,7 +54,7 @@ export default class PLAY extends Component {
   }
   render() {
     return (
-      <div>
+      <div style={{ paddingTop: '100px' }}>
 
         {/* <div>
           <ol className="navbar-nav mr-auto">
@@ -56,10 +70,23 @@ export default class PLAY extends Component {
             <img className="card-img-top" src={require('../assets/27cards.jpg')} onClick={this.Game4} alt="27 cards trick" />
             <div className="card-body">
               <h5 className="card-title">27 Cards</h5>
-              <p className="card-text">Keep track of your card in the deck while we try to guess it!</p> 
+              <p className="card-text">Keep track of your card in the deck while we try to guess it!</p>
             </div>
             <div className="card-footer">
-              <button className="btn btn-outline-danger" onClick={this.Game4}>Play</button>
+              <button className="btn btn-outline-danger" onClick={()=>{
+                this.props.history.push({
+                  pathname: '/Play/Game4/'
+                });
+              }}>Play</button>
+              {/* <div className='play-play'>
+                <a href='/Play' onClick={this.Game4}>
+                  <p>
+                    <span className='bg'></span>
+                    <span className='base'></span>
+                    <span className='text'>Play</span>
+                  </p>
+                </a>
+              </div> */}
             </div>
           </div>
           <div className="card play-card" style={{ width: "18rem" }}>
